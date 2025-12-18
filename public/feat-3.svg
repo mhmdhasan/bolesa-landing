@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="490.001" height="490" viewBox="0 0 490.001 490">
+  <g id="feat-3" transform="translate(0.001)">
+    <g id="Group_7" data-name="Group 7">
+      <path id="Path_45" data-name="Path 45" d="M75,20H415V185h20V10A10,10,0,0,0,425,0H65A10,10,0,0,0,55,10V185H75Z" fill="#fff"/>
+      <path id="Path_46" data-name="Path 46" d="M415,390H345a10,10,0,0,0-10,10v70H75V314.995H55V480a10,10,0,0,0,10,10H345a9.992,9.992,0,0,0,7.071-2.929l80-80a9.98,9.98,0,0,0,2.9-7.071H435V315H415Zm-60,65.857V410h45.857Z" fill="#fff"/>
+      <path id="Path_47" data-name="Path 47" d="M480,215H65v.019a9.99,9.99,0,0,0-4.138.877l-55,25a10,10,0,0,0,0,18.208l55,25A9.968,9.968,0,0,0,65,285H480a10,10,0,0,0,10-10V225A10,10,0,0,0,480,215ZM55,259.47,34.166,250,55,240.53ZM415,265H75V235H415Zm55,0H435V235h35Z" fill="#fff"/>
+      <rect id="Rectangle_1" data-name="Rectangle 1" width="80" height="20" transform="translate(100 45)" fill="#fff"/>
+      <rect id="Rectangle_2" data-name="Rectangle 2" width="110" height="20" transform="translate(100 85)" fill="#fff"/>
+      <rect id="Rectangle_3" data-name="Rectangle 3" width="245" height="20" transform="translate(145 135)" fill="#fff"/>
+      <rect id="Rectangle_4" data-name="Rectangle 4" width="290" height="20" transform="translate(100 175)" fill="#fff"/>
+      <rect id="Rectangle_5" data-name="Rectangle 5" width="290" height="20" transform="translate(100 305)" fill="#fff"/>
+      <rect id="Rectangle_6" data-name="Rectangle 6" width="160" height="20" transform="translate(100 385)" fill="#fff"/>
+      <rect id="Rectangle_7" data-name="Rectangle 7" width="20" height="20" transform="translate(340 45)" fill="#fff"/>
+      <rect id="Rectangle_8" data-name="Rectangle 8" width="20" height="20" transform="translate(370 45)" fill="#fff"/>
+      <rect id="Rectangle_9" data-name="Rectangle 9" width="25" height="20" transform="translate(100 420)" fill="#fff"/>
+      <rect id="Rectangle_10" data-name="Rectangle 10" width="25" height="20" transform="translate(140 420)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

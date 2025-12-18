@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="115.549" height="110.27" viewBox="0 0 115.549 110.27">
+  <defs>
+    <linearGradient id="linear-gradient" x1="4.681" y1="-4.729" x2="5.464" y2="-4.729" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ab83c9"/>
+      <stop offset="1" stop-color="#7e55a1"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.123" y1="-0.174" x2="0.44" y2="1.047" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e0bdf7"/>
+      <stop offset="1" stop-color="#8757b0"/>
+    </linearGradient>
+    <radialGradient id="radial-gradient" cx="1.004" cy="0.401" r="0.743" gradientTransform="matrix(0.6, 0.74, -0.479, 0.487, 0.594, -0.538)" gradientUnits="objectBoundingBox">
+      <stop offset="0.141" stop-color="#413655"/>
+      <stop offset="0.312" stop-color="#685f78" stop-opacity="0.792"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g id="geoshape-3" transform="translate(-104.929 -363.154)">
+    <path id="Path_29" data-name="Path 29" d="M141.2,473.425l67.373-7.051L104.929,363.154Z" fill="url(#linear-gradient)"/>
+    <path id="Path_30" data-name="Path 30" d="M208.574,466.374l11.9-82.559-115.549-20.66Z" fill="url(#linear-gradient-2)"/>
+    <path id="Path_31" data-name="Path 31" d="M208.574,466.374l11.9-82.559-115.549-20.66Z" fill="url(#radial-gradient)" style="mix-blend-mode: multiply;isolation: isolate"/>
+  </g>
+</svg>
