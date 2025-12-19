@@ -16,38 +16,12 @@ import {
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
 import type { ComponentProps } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 // Simple logo component for the navbar
-const Logo = (props: React.SVGAttributes<SVGElement>) => {
-    return (
-        <svg
-            width='1em'
-            height='1em'
-            viewBox='0 0 324 323'
-            fill='currentColor'
-            xmlns='http://www.w3.org/2000/svg'
-            {...(props as any)}
-        >
-            <rect
-                x='88.1023'
-                y='144.792'
-                width='151.802'
-                height='36.5788'
-                rx='18.2894'
-                transform='rotate(-38.5799 88.1023 144.792)'
-                fill='currentColor'
-            />
-            <rect
-                x='85.3459'
-                y='244.537'
-                width='151.802'
-                height='36.5788'
-                rx='18.2894'
-                transform='rotate(-38.5799 85.3459 244.537)'
-                fill='currentColor'
-            />
-        </svg>
-    );
+const Logo = () => {
+    return <Image src='/bolesa_logo.svg' alt='Logo' width={60} height={60} />;
 };
 
 // Hamburger icon component
@@ -67,7 +41,7 @@ const HamburgerIcon = ({ className, ...props }: React.SVGAttributes<SVGElement>)
     >
         <path
             d='M4 12L20 12'
-            className='origin-center -translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-x-0 group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]'
+            className='origin-center -translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-x-0 group-aria-expanded:translate-y-0 group-aria-expanded:rotate-315'
         />
         <path
             d='M4 12H20'
@@ -75,7 +49,7 @@ const HamburgerIcon = ({ className, ...props }: React.SVGAttributes<SVGElement>)
         />
         <path
             d='M4 12H20'
-            className='origin-center translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]'
+            className='origin-center translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-135'
         />
     </svg>
 );
@@ -272,7 +246,7 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
             <header
                 ref={combinedRef}
                 className={cn(
-                    'sticky top-0 z-50 w-full bg-transparent backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4 md:px-6 [&_*]:no-underline',
+                    'sticky top-0 z-50 w-full bg-transparent backdrop-blur supports-backdrop-filter:bg-background/60 px-4 md:px-6 **:no-underline',
                     className
                 )}
                 {...(props as any)}
@@ -345,13 +319,9 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
                         )}
                         {/* Main nav */}
                         <div className='flex items-center gap-6'>
-                            <button
-                                onClick={(e) => e.preventDefault()}
-                                className='flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors cursor-pointer'
-                            >
-                                <div className='text-2xl'>{logo}</div>
-                                <span className='hidden font-bold text-xl sm:inline-block'>shadcn.io</span>
-                            </button>
+                            <Link href='/'>
+                                <Logo />
+                            </Link>
                             {/* Navigation menu */}
                             {!isMobile && (
                                 <NavigationMenu className='flex'>
@@ -369,7 +339,7 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
                                                                         <NavigationMenuLink asChild>
                                                                             <button
                                                                                 onClick={(e) => e.preventDefault()}
-                                                                                className='flex h-full w-full select-none flex-col justify-center items-center text-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md cursor-pointer'
+                                                                                className='flex h-full w-full select-none flex-col justify-center items-center text-center rounded-md bg-linear-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md cursor-pointer'
                                                                             >
                                                                                 <div className='mb-3 text-xl font-medium'>
                                                                                     shadcn.io

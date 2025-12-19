@@ -2,174 +2,19 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { BorderBeam } from '@/components/ui/border-beam';
-import Image from 'next/image';
 import { Highlighter } from '@/components/ui/highlighter';
-import HLine from '@/components/HLine';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import Lenis from 'lenis';
 import { motion } from 'motion/react';
 import { FlickeringGrid } from '@/components/ui/flickering-grid';
 import { BsStars } from 'react-icons/bs';
-
-const carrierImages = [
-    // ... (same as before)
-    {
-        src: '/aramex-del.png',
-        alt: 'ارامكس',
-        width: 120,
-        height: 100,
-        delay: 0,
-    },
-    {
-        src: '/sobol.png',
-        alt: 'واي اكسبريس',
-        width: 80,
-        height: 100,
-        delay: 100,
-    },
-    {
-        src: '/smsa.png',
-        alt: 'يو بي اس',
-        width: 120,
-        height: 100,
-        delay: 200,
-    },
-    {
-        src: '/jt_express.png',
-        alt: 'مخدوم',
-        width: 120,
-        height: 100,
-        delay: 300,
-    },
-    {
-        src: '/naqel.png',
-        alt: 'ناقل',
-        width: 150,
-        height: 100,
-        delay: 400,
-    },
-    {
-        src: '/kwick-box.png',
-        alt: 'كويك بوكس',
-        width: 120,
-        height: 100,
-        delay: 400,
-    },
-    {
-        src: '/redbox.svg',
-        alt: 'ريد بوكس',
-        width: 120,
-        height: 100,
-        delay: 400,
-    },
-    {
-        src: '/third_mile.png',
-        alt: 'ثرد مايل',
-        width: 120,
-        height: 100,
-        delay: 400,
-    },
-    {
-        src: '/fastlo.png',
-        alt: 'فاستلو',
-        width: 120,
-        height: 100,
-        delay: 400,
-    },
-    {
-        src: '/flow_express.png',
-        alt: 'فلو إكسبريس',
-        width: 100,
-        height: 100,
-        delay: 400,
-    },
-    {
-        src: '/imile_2.png',
-        alt: 'اي مايل',
-        width: 80,
-        height: 100,
-        delay: 400,
-    },
-    {
-        src: '/aramex-del.png',
-        alt: 'ارامكس',
-        width: 120,
-        height: 100,
-        delay: 0,
-    },
-    {
-        src: '/sobol.png',
-        alt: 'واي اكسبريس',
-        width: 80,
-        height: 100,
-        delay: 100,
-    },
-    {
-        src: '/smsa.png',
-        alt: 'يو بي اس',
-        width: 120,
-        height: 100,
-        delay: 200,
-    },
-    {
-        src: '/jt_express.png',
-        alt: 'مخدوم',
-        width: 120,
-        height: 100,
-        delay: 300,
-    },
-    {
-        src: '/naqel.png',
-        alt: 'ناقل',
-        width: 150,
-        height: 100,
-        delay: 400,
-    },
-    {
-        src: '/kwick-box.png',
-        alt: 'كويك بوكس',
-        width: 120,
-        height: 100,
-        delay: 400,
-    },
-    {
-        src: '/redbox.svg',
-        alt: 'ريد بوكس',
-        width: 120,
-        height: 100,
-        delay: 400,
-    },
-    {
-        src: '/third_mile.png',
-        alt: 'ثرد مايل',
-        width: 120,
-        height: 100,
-        delay: 400,
-    },
-    {
-        src: '/fastlo.png',
-        alt: 'فاستلو',
-        width: 120,
-        height: 100,
-        delay: 400,
-    },
-    {
-        src: '/flow_express.png',
-        alt: 'فلو إكسبريس',
-        width: 100,
-        height: 100,
-        delay: 400,
-    },
-    {
-        src: '/imile_2.png',
-        alt: 'اي مايل',
-        width: 80,
-        height: 100,
-        delay: 400,
-    },
-];
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { FaAppStore } from 'react-icons/fa6';
+import { FaGooglePlay } from 'react-icons/fa6';
+import { FaShippingFast } from 'react-icons/fa';
+import { TextAnimate } from '@/components/ui/text-animate';
+// 3193d8a f214b23
 
 const fadeInUp = (delay = 0, duration = 0.7, y = 30) => ({
     initial: { opacity: 0, y },
@@ -199,7 +44,7 @@ function CursorCircle() {
     return (
         <div
             ref={circleRef}
-            className='fixed z-[99] pointer-events-none mix-blend-difference'
+            className='fixed z-99 pointer-events-none mix-blend-difference'
             style={{
                 left: 0,
                 top: 0,
@@ -238,11 +83,11 @@ export default function Hero() {
             <CursorCircle />
 
             <FlickeringGrid
-                className='absolute inset-0 z-0 [mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]'
+                className='absolute inset-0 z-0 mask-[radial-gradient(1000px_circle_at_center,white,transparent)]'
                 squareSize={4}
                 gridGap={6}
                 color='#ccc'
-                maxOpacity={0.5}
+                maxOpacity={0.3}
                 flickerChance={0.1}
                 height={500}
                 width={2000}
@@ -265,13 +110,11 @@ export default function Hero() {
                         <div className='framer-1e2t9ku'></div>
                     </div>
                 </div>
-
                 <motion.div
                     className='flex text-center items-center flex-col w-full gap-7 relative z-20'
                     initial='initial'
                     animate='animate'
                 >
-                    {/* shadow-[2px_2px_5px_rgba(0,0,0,0.07)] */}
                     <motion.div variants={fadeInUp(0.05)}>
                         <div className='cursor-default bg-muted inline-flex gap-2 items-center border w-fit backdrop-blur-lg rounded-xl px-5 py-1'>
                             <BsStars />
@@ -281,19 +124,25 @@ export default function Hero() {
                     </motion.div>
                     <motion.div variants={fadeInUp(0.15)}>
                         <h1 className='cursor-default font-ibm-plex-sans-arabic relative font-extrabold text-3xl lg:text-6xl leading-[50px]'>
-                            أقوى{' '}
-                            <Highlighter action='highlight' strokeWidth={1.5} iterations={4} color='#d97445'>
+                            <TextAnimate className='inline-block' animation='blurInUp' by='word' once>
+                                أقوى
+                            </TextAnimate>{' '}
+                            <Highlighter action='highlight' strokeWidth={1.5} iterations={4} color='#f28247'>
                                 <span className='cursor-default font-ibm-plex-sans-arabic relative z-20 text-white'>
                                     منصة شحن
                                 </span>
                             </Highlighter>{' '}
-                            للمتاجر الإلكترونية
+                            <TextAnimate className='inline-block' animation='blurInUp' by='word' once>
+                                للمتاجر الإلكترونية
+                            </TextAnimate>
                         </h1>
                     </motion.div>
-                    <motion.p className='text-lg max-w-3xl mx-auto cursor-default' variants={fadeInUp(0.23)}>
-                        بوليصة تقدم لك الحل الشامل لإدارة عمليات الشحن لمتجرك الإلكتروني بسهولة وسرعة. مع خدمات موثوقة
-                        وآمنة، نوفر لك متابعة الشحنات، اختيار أفضل شركات النقل، وتكامل سلس مع متجرك
-                    </motion.p>
+                    <motion.div className='text-lg max-w-3xl mx-auto cursor-default' variants={fadeInUp(0.23)}>
+                        <TextAnimate className='inline-block' animation='blurInUp' by='word' duration={2} once>
+                            بوليصة تقدم لك الحل الشامل لإدارة عمليات الشحن لمتجرك الإلكتروني بسهولة وسرعة. مع خدمات
+                            موثوقة وآمنة، نوفر لك متابعة الشحنات، اختيار أفضل شركات النقل، وتكامل سلس مع متجرك
+                        </TextAnimate>
+                    </motion.div>
                     <motion.div
                         className='p-1 bg-muted/30 relative z-20 rounded-2xl border-2 border-muted-foreground/10 ring-3 ring-muted-foreground/5 grid grid-cols-1 xl:grid-cols-3 gap-2 w-full max-w-3xl'
                         variants={fadeInUp(0.32)}
@@ -317,68 +166,56 @@ export default function Hero() {
                             </div>
                         </motion.div>
                     </motion.div>
-                </motion.div>
-            </div>
 
-            <div className='mt-20 w-full flex flex-col items-center justify-center gap-3 z-10  relative'>
-                <HLine />
-
-                <motion.div
-                    className='max-w-[1300px] px-2 py-3 mx-auto relative flex w-full flex-col items-center justify-center overflow-hidden'
-                    initial='initial'
-                    whileInView='animate'
-                    viewport={{ once: true, amount: 0.22 }}
-                >
-                    <Swiper
-                        className='w-full'
-                        spaceBetween={15}
-                        slidesPerView={5}
-                        breakpoints={{
-                            765: {
-                                slidesPerView: 3,
-                            },
-                            991: {
-                                slidesPerView: 9,
-                            },
-                            1200: {
-                                slidesPerView: 11,
-                            },
-                        }}
-                        loop={true}
-                        speed={6000}
-                        modules={[Autoplay]}
-                        centeredSlides={false}
-                        autoplay={{
-                            delay: 0,
-                            disableOnInteraction: false,
-                        }}
-                    >
-                        {carrierImages?.map((img, index) => (
-                            <SwiperSlide className='text-center' key={index}>
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.6, delay: index * 0.05 }}
-                                    viewport={{ once: true }}
+                    <div className='w-full flex flex-col items-center gap-2'>
+                        <motion.div variants={fadeInUp(0.53)} className='text-neutral-6700 mb-3'>
+                            <TextAnimate className='inline-block' animation='blurInUp' by='word' duration={1} once>
+                                حمّل تطبيق بوليصة أو ابدأ الشحن من تطبيق الويب بسهولة وسرعة
+                            </TextAnimate>
+                        </motion.div>
+                        <motion.div
+                            variants={fadeInUp(0.58)}
+                            className='flex items-center justify-center gap-2 flex-wrap'
+                        >
+                            <Button asChild variant='primary' className='px-6!'>
+                                <Link target='_blank' href={'https://app.bolesa.net'}>
+                                    ابدأ الشحن الآن
+                                    <FaShippingFast className='size-6 shrink-0 rotate-y-180' />
+                                </Link>
+                            </Button>
+                            <Button asChild variant='store' className='py-2!'>
+                                <Link
+                                    target='_blank'
+                                    href={
+                                        'https://apps.apple.com/sa/app/bolesa-%D8%A8%D9%88%D9%84%D9%8A%D8%B5%D8%A9/id6670608761'
+                                    }
                                 >
-                                    <Image
-                                        src={img?.src}
-                                        alt={img?.alt}
-                                        height={0}
-                                        width={150}
-                                        style={{
-                                            maxHeight: 25,
-                                            objectFit: 'contain',
-                                            objectPosition: 'center',
-                                        }}
-                                        className='grayscale object-fit'
-                                    />
-                                </motion.div>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+                                    <div className='inline-flex gap-2'>
+                                        <div className='inline-flex text-end gap-0 flex-col'>
+                                            <p className='text-[11px] font-regular leading-none uppercase'>Get It On</p>
+                                            <p className='text-[14px] font-bold leading-none'>App Store</p>
+                                        </div>
+                                        <FaAppStore className='size-6 shrink-0' />
+                                    </div>
+                                </Link>
+                            </Button>
+                            <Button asChild variant='store' className='py-2!'>
+                                <Link
+                                    target='_blank'
+                                    href={'https://play.google.com/store/apps/details?id=com.storagestation.bolesa.co'}
+                                >
+                                    <div className='inline-flex gap-2'>
+                                        <div className='inline-flex text-end gap-0 flex-col'>
+                                            <p className='text-[11px] font-regular leading-none uppercase'>Get It On</p>
+                                            <p className='text-[14px] font-bold leading-none'>Google Play</p>
+                                        </div>
+                                        <FaGooglePlay className='size-6 shrink-0' />
+                                    </div>
+                                </Link>
+                            </Button>
+                        </motion.div>
+                    </div>
                 </motion.div>
-                <HLine />
             </div>
         </section>
     );
