@@ -3,6 +3,7 @@ import Hero from './(home-sections)/Hero';
 import LogoSlider from './(home-sections)/LogoSlider';
 import './globals.css';
 import HowItWorksSection from './(home-sections)/HowItWorksSection';
+import WhoIsItForSection from './(home-sections)/WhoIsItForSection';
 
 export default function Home() {
     return (
@@ -11,6 +12,7 @@ export default function Home() {
             <Hero />
             <LogoSlider />
             <HowItWorksSection />
+            <WhoIsItForSection />
             <div
                 className="
                     pointer-events-none 

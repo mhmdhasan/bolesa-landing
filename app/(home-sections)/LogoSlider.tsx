@@ -1,17 +1,11 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
-import { BorderBeam } from '@/components/ui/border-beam';
 import Image from 'next/image';
-import { Highlighter } from '@/components/ui/highlighter';
 import HLine from '@/components/HLine';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import Lenis from 'lenis';
 import { motion } from 'motion/react';
-import { FlickeringGrid } from '@/components/ui/flickering-grid';
-import { BsStars } from 'react-icons/bs';
 
 const carrierImages = [
     // ... (same as before)
