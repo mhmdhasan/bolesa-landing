@@ -21,13 +21,7 @@ const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
 const cairo = Cairo({
     variable: '--font-cairo',
     subsets: ['latin'],
-    weight: ['300', '400', '700', '900'],
-});
-
-const baloo = Baloo_Bhaijaan_2({
-    variable: '--font-baloo',
-    subsets: ['latin'],
-    weight: ['400', '700'],
+    weight: ['300', '400', '500', '600', '700', '900'],
 });
 
 export const metadata: Metadata = {

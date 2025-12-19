@@ -181,12 +181,12 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
         {
             className,
             logo = <Logo />,
-            logoHref = '#',
+            logoHref = '/',
             navigationLinks = defaultNavigationLinks,
             signInText = 'Sign In',
-            signInHref = '#signin',
-            ctaText = 'Get Started',
-            ctaHref = '#get-started',
+            signInHref = 'https://app.bolesa.net/login',
+            ctaText = 'تسجيل الدخول',
+            ctaHref = 'https://app.bolesa.net/login',
             onSignInClick,
             onCtaClick,
             ...props
@@ -435,15 +435,10 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
                         >
                             {signInText}
                         </Button>
-                        <Button
-                            size='sm'
-                            className='text-sm font-medium px-4 h-9 rounded-md shadow-sm'
-                            onClick={(e) => {
-                                e.preventDefault();
-                                if (onCtaClick) onCtaClick();
-                            }}
-                        >
-                            {ctaText}
+                        <Button variant='store' className='text-sm font-medium px-4 h-9 rounded-md shadow-sm' asChild>
+                            <Link href={ctaHref} target='_blank'>
+                                {ctaText}
+                            </Link>
                         </Button>
                     </div>
                 </div>
