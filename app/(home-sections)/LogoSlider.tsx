@@ -226,7 +226,7 @@ export default function LogoSlider() {
                         ))}
                     </Swiper>
                 </motion.div>
-                <HLine />
+                <HLine borderColor='#f77972' />
             </div>
         </section>
     );

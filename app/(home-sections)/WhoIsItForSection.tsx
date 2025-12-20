@@ -79,7 +79,7 @@ export default function WhoIsItForSection() {
             <HLine />
             <div className='py-3'></div>
             <HLine />
-            <section className='py-[60px] w-full overflow-hidden relative'>
+            <section className='py-[80px] w-full overflow-hidden relative'>
                 <div className='max-w-[1300px] w-full mx-auto relative z-20 text-center'>
                     <motion.h2
                         variants={fadeInUp(0.05)}
@@ -136,7 +136,7 @@ export default function WhoIsItForSection() {
                                         transition={{ duration: 0.6, delay: index * 0.05 }}
                                         viewport={{ once: true }}
                                     >
-                                        <div className='px-4 py-1 rounded-md bg-muted-foreground/10 font-ibm-plex-sans-arabic font-medium'>
+                                        <div className='px-4 py-1 rounded-md bg-muted-foreground/5 font-ibm-plex-sans-arabic font-medium'>
                                             <div className='inline-flex items-center gap-1'>
                                                 <span className='bg-linear-to-r text-lg from-orange-200 to-orange-600 bg-clip-text text-transparent'>
                                                     ✹
@@ -181,7 +181,7 @@ export default function WhoIsItForSection() {
                                         transition={{ duration: 0.6, delay: index * 0.05 }}
                                         viewport={{ once: true }}
                                     >
-                                        <div className='px-4 py-1 rounded-md bg-muted-foreground/10 font-ibm-plex-sans-arabic font-medium'>
+                                        <div className='px-4 py-1 rounded-md bg-muted-foreground/5 font-ibm-plex-sans-arabic font-medium'>
                                             <div className='inline-flex items-center gap-1'>
                                                 <span className='bg-linear-to-r text-lg from-orange-200 to-orange-600 bg-clip-text text-transparent'>
                                                     ✹
@@ -198,7 +198,7 @@ export default function WhoIsItForSection() {
             </section>
             <HLine />
             <div className='py-3'></div>
-            <HLine />
+            <HLine borderColor='#91b436' />
         </div>
     );
 }

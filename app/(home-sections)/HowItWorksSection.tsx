@@ -7,9 +7,9 @@ import Image from 'next/image';
 import { FaCircle } from 'react-icons/fa6';
 import { LuClipboard, LuTruck, LuReceiptText } from 'react-icons/lu';
 
-const fadeInUp = (delay = 0, duration = 0.7, y = 30) => ({
-    initial: { opacity: 0, y },
-    animate: { opacity: 1, y: 0, transition: { duration, delay } },
+const fadeInUp = (delay = 0, duration = 0.7, y = 30, blur = 20) => ({
+    initial: { opacity: 0, y, filter: `blur(${blur}px)` },
+    animate: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration, delay } },
 });
 
 const howItWorks = [
@@ -38,7 +38,7 @@ const howItWorks = [
 
 export default function HowItWorksSection() {
     return (
-        <section className='py-[60px] w-full overflow-hidden relative'>
+        <section className='py-[90px] w-full overflow-hidden relative'>
             <div className='w-full h-[300px] bg-linear-to-b from-[#f77972] to-background absolute top-0 opacity-5'></div>
             <FlickeringGrid
                 className='absolute inset-0 z-0 mask-[radial-gradient(1000px_circle_at_center,white,transparent)]'
@@ -89,7 +89,7 @@ export default function HowItWorksSection() {
                         <motion.div
                             key={idx}
                             className='bg-muted rounded-3xl p-1 gap-4 flex flex-col'
-                            variants={fadeInUp(0.1 + idx * 0.13)}
+                            variants={fadeInUp(0.1 + idx * 0.13, 0.4)}
                             initial='initial'
                             whileInView='animate'
                             viewport={{ once: true, amount: 0.4 }}
