@@ -5,6 +5,7 @@ import './globals.css';
 import HowItWorksSection from './(home-sections)/HowItWorksSection';
 import WhoIsItForSection from './(home-sections)/WhoIsItForSection';
 import FeaturesSection from './(home-sections)/FeaturesSection';
+import CarriersSection from './(home-sections)/CarriersSection';
 
 export default function Home() {
     return (
@@ -15,6 +16,7 @@ export default function Home() {
             <HowItWorksSection />
             <WhoIsItForSection />
             <FeaturesSection />
+            <CarriersSection />
             <div
                 className="
                     pointer-events-none 

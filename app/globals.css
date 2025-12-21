@@ -67,13 +67,18 @@
             transform: translateY(calc(-100% - var(--gap)));
         }
     }
-    --animate-orbit: orbit calc(var(--duration)*1s) linear infinite
-;
-  @keyframes orbit {
-  0% {
-    transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));}
-  100% {
-    transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));}}}
+    --animate-orbit: orbit calc(var(--duration) * 1s) linear infinite;
+    @keyframes orbit {
+        0% {
+            transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px))
+                rotate(calc(var(--angle) * -1deg));
+        }
+        100% {
+            transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px))
+                rotate(calc((var(--angle) * -1deg) - 360deg));
+        }
+    }
+}
 
 :root {
     --radius: 0.625rem;
@@ -304,5 +309,121 @@
     }
     .swiper-wrapper {
         transition-timing-function: linear !important;
+    }
+
+    .framer-11wenrb {
+        z-index: 1;
+        flex-flow: row;
+        flex: none;
+        place-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 350px;
+        height: 350px;
+        padding: 50px;
+        display: flex;
+        position: absolute;
+        top: calc(50% - 175px);
+        left: calc(50% - 175px);
+        overflow: hidden;
+    }
+
+    .framer-1v1ob1h {
+        z-index: 4;
+        flex-flow: row;
+        flex: none;
+        place-content: center;
+        align-items: center;
+        gap: 10px;
+        width: min-content;
+        height: min-content;
+        padding: 0;
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        overflow: visible;
+    }
+    .framer-143kh33 {
+        z-index: 1;
+        flex: none;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: -94px;
+        left: -94px;
+        overflow: hidden;
+    }
+    .framer-8jf8ke {
+        z-index: 1;
+        flex: none;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: -105px;
+        right: -94px;
+        overflow: hidden;
+    }
+    .framer-a9uzhz {
+        z-index: 1;
+        flex: none;
+        width: 200px;
+        position: absolute;
+        top: -16px;
+        bottom: -72px;
+        right: -102px;
+        overflow: hidden;
+    }
+    .framer-ppd9z0 {
+        z-index: 1;
+        flex: none;
+        height: 200px;
+        position: absolute;
+        bottom: -100px;
+        left: 0;
+        right: -88px;
+        overflow: hidden;
+    }
+    .framer-12hpzgp {
+        z-index: 1;
+        flex: none;
+        position: absolute;
+        inset: -16px -19px -72px -69px;
+        overflow: hidden;
+    }
+    .framer-6li7ng {
+        z-index: 1;
+        flex: none;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        bottom: -104px;
+        left: -110px;
+        overflow: hidden;
+    }
+    .framer-1n0mvn2 {
+        z-index: 1;
+        flex: none;
+        width: 200px;
+        position: absolute;
+        top: -37px;
+        bottom: -51px;
+        left: -100px;
+        overflow: hidden;
+    }
+    .framer-1v7kf7i {
+        will-change: var(--framer-will-change-override, transform);
+        z-index: 2;
+        flex-flow: row;
+        flex: none;
+        place-content: center;
+        align-items: center;
+        gap: 0;
+        width: min-content;
+        height: min-content;
+        padding: 6px;
+        display: flex;
+        position: relative;
+        overflow: hidden;
     }
 }

@@ -4,6 +4,28 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@/lib/utils';
 
+// Helper function for dynamic store background gradients, if needed
+function getStoreBackgroundStyle(customPattern?: [string, string]) {
+    if (
+        customPattern &&
+        Array.isArray(customPattern) &&
+        customPattern.length === 2 &&
+        typeof customPattern[0] === 'string' &&
+        typeof customPattern[1] === 'string'
+    ) {
+        return {
+            background:
+                `linear-gradient(140.14deg, ${customPattern[0]} 15.05%, ${customPattern[1]} 114.99%) padding-box,` +
+                `linear-gradient(142.51deg, ${customPattern[0]} 8.65%, ${customPattern[1]} 88.82%) border-box`,
+        };
+    }
+    return {
+        background:
+            'linear-gradient(140.14deg, #000 15.05%, #444 114.99%) padding-box,' +
+            'linear-gradient(142.51deg, #000 8.65%, #444 88.82%) border-box',
+    };
+}
+
 const buttonVariants = cva(
     "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive font-ibm-plex-sans-arabic font-medium",
     {
@@ -25,7 +47,6 @@ const buttonVariants = cva(
                     'text-[18px]',
                     'leading-[20px]',
                     'rounded-[7px]',
-                    // 'border-2',
                     'border-transparent',
                     'px-10 py-2.5! h-auto!',
                     'py-[10px]',
@@ -36,25 +57,7 @@ const buttonVariants = cva(
                     'hover:opacity-80',
                     'hover:shadow-none',
                 ].join(' '),
-                store: [
-                    'text-white',
-                    'text-shadow-[1px_1px_1px_#00000040]',
-                    'font-medium',
-                    'font-ibm-plex-sans-arabic',
-                    'text-[18px]',
-                    'leading-[20px]',
-                    'rounded-[7px]',
-                    // 'border-2',
-                    'border-transparent',
-                    'px-10 py-2.5! h-auto!',
-                    'py-[10px]',
-                    'cursor-pointer',
-                    'transition-all',
-                    'shadow-[4px_3px_10px_0px_#00000066]',
-                    '[background:linear-gradient(140.14deg,_#000_15.05%,_#444_114.99%)_padding-box,linear-gradient(142.51deg,_#000_8.65%,_#444_88.82%)_border-box]',
-                    'hover:opacity-80',
-                    'hover:shadow-none',
-                ].join(' '),
+                store: '',
             },
             size: {
                 default: 'h-9 px-4 py-2 has-[>svg]:px-3',
@@ -72,24 +75,66 @@ const buttonVariants = cva(
     }
 );
 
+type ButtonProps = React.ComponentProps<'button'> &
+    VariantProps<typeof buttonVariants> & {
+        asChild?: boolean;
+        customPattern?: [string, string];
+    };
+
 function Button({
     className,
     variant = 'default',
     size = 'default',
     asChild = false,
+    customPattern,
+    style,
     ...props
-}: React.ComponentProps<'button'> &
-    VariantProps<typeof buttonVariants> & {
-        asChild?: boolean;
-    }) {
+}: ButtonProps & { style?: React.CSSProperties }) {
     const Comp = asChild ? Slot : 'button';
+
+    let realClassName = className;
+    let customStyle: React.CSSProperties | undefined = style;
+
+    if (variant === 'store') {
+        realClassName = cn(
+            [
+                'text-white',
+                'text-shadow-[1px_1px_1px_#00000040]',
+                'font-medium',
+                'font-ibm-plex-sans-arabic',
+                'text-[18px]',
+                'leading-[20px]',
+                'rounded-[7px]',
+                'border-transparent',
+                'px-10 py-2.5! h-auto!',
+                'py-[10px]',
+                'cursor-pointer',
+                'transition-all',
+                'shadow-[4px_3px_10px_0px_#00000066]',
+                'hover:opacity-80',
+                'hover:shadow-none',
+            ].join(' '),
+            className
+        );
+        customStyle = {
+            ...getStoreBackgroundStyle(customPattern),
+            ...style,
+        };
+    }
 
     return (
         <Comp
             data-slot='button'
             data-variant={variant}
             data-size={size}
-            className={cn(buttonVariants({ variant, size, className }))}
+            className={cn(
+                buttonVariants({
+                    variant: variant === 'store' ? undefined : variant,
+                    size,
+                }),
+                variant === 'store' ? realClassName : className
+            )}
+            style={customStyle}
             {...props}
         />
     );
