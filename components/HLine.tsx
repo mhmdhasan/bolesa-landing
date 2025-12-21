@@ -26,12 +26,12 @@ export default function HLine({
             )}
             <div className='absolute w-[1300px] top-0 start-[50%] translate-x-[50%]'>
                 <span
-                    style={borderColor ? { borderColor, opacity: 0.8 } : undefined}
-                    className='size-[5px] border bg-background rounded-full absolute -top-[2px] -start-[2px]'
+                    style={borderColor ? { borderColor, background: borderColor, opacity: 1 } : undefined}
+                    className='size-[5px] border rotate-45 bg-neutral-400 absolute -top-[2px] -start-[2px]'
                 />
                 <span
-                    style={borderColor ? { borderColor, opacity: 0.8 } : undefined}
-                    className='size-[5px] border bg-background rounded-full absolute -top-[2px] -end-[2px]'
+                    style={borderColor ? { borderColor, background: borderColor, opacity: 1 } : undefined}
+                    className='size-[5px] border rotate-45 bg-neutral-400 absolute -top-[2px] -end-[2px]'
                 />
             </div>
         </div>
