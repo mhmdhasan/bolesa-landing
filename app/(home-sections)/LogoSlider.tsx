@@ -168,7 +168,7 @@ const carrierImages = [
 export default function LogoSlider() {
     return (
         <section>
-            <div className='w-full flex flex-col items-center justify-center gap-3 z-10  relative'>
+            <div className='w-full flex flex-col items-center justify-center gap-3 z-10 relative'>
                 <HLine />
 
                 <motion.div
@@ -225,7 +225,10 @@ export default function LogoSlider() {
                             </SwiperSlide>
                         ))}
                     </Swiper>
+                    <div className='absolute h-full w-30 lg:w-40 bg-linear-to-l from-background to-transparent top-0 right-0 z-100'></div>
+                    <div className='absolute h-full w-30 lg:w-40 bg-linear-to-r from-background to-transparent top-0 left-0 z-100'></div>
                 </motion.div>
+
                 <HLine borderColor='#f77972' />
             </div>
         </section>

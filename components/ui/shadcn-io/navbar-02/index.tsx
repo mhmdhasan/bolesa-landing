@@ -82,99 +82,52 @@ export interface Navbar02Props extends React.HTMLAttributes<HTMLElement> {
 
 // Default navigation links
 const defaultNavigationLinks: Navbar02NavItem[] = [
-    { href: '#i', label: 'تواصل معنا' },
-    { href: '#u', label: 'الأسئلة الشائعة' },
-    { href: '#y', label: 'تتبع الشحنات' },
-    { href: '#t', label: 'الناقلون' },
-    { href: '#r', label: 'المميزات' },
-    { href: '#f', label: 'آلية العمل' },
+    { href: '#contact-us', label: 'تواصل معنا' },
+    { href: '#faq', label: 'الأسئلة الشائعة' },
+    { href: '#tracking', label: 'تتبع الشحنات' },
+    { href: '#carriers', label: 'الناقلون' },
+    { href: '#features', label: 'المميزات' },
+    { href: '#how-it-works', label: 'آلية العمل' },
     { href: '#hero', label: 'الرئيسية' },
-    // {
-    //     label: 'الرئيسية',
-    //     submenu: false,
-    //     // type: 'description',
-    //     // items: [
-    //     //     {
-    //     //         href: '#components',
-    //     //         label: 'Components',
-    //     //         description: 'Browse all components in the library.',
-    //     //     },
-    //     //     {
-    //     //         href: '#documentation',
-    //     //         label: 'Documentation',
-    //     //         description: 'Learn how to use the library.',
-    //     //     },
-    //     //     {
-    //     //         href: '#templates',
-    //     //         label: 'Templates',
-    //     //         description: 'Pre-built layouts for common use cases.',
-    //     //     },
-    //     // ],
-    // },
-    // {
-    //     label: 'آلية العمل',
-    //     submenu: false,
-    //     // type: 'simple',
-    //     // items: [
-    //     //     { href: '#product-a', label: 'Product A' },
-    //     //     { href: '#product-b', label: 'Product B' },
-    //     //     { href: '#product-c', label: 'Product C' },
-    //     //     { href: '#product-d', label: 'Product D' },
-    //     // ],
-    // },
-    // {
-    //     label: 'المميزات',
-    //     submenu: false,
-    //     // type: 'simple',
-    //     // items: [
-    //     //     { href: '#product-a', label: 'Product A' },
-    //     //     { href: '#product-b', label: 'Product B' },
-    //     //     { href: '#product-c', label: 'Product C' },
-    //     //     { href: '#product-d', label: 'Product D' },
-    //     // ],
-    // },
-    // {
-    //     label: 'الناقلون',
-    //     submenu: false,
-    //     // type: 'simple',
-    //     // items: [
-    //     //     { href: '#product-a', label: 'Product A' },
-    //     //     { href: '#product-b', label: 'Product B' },
-    //     //     { href: '#product-c', label: 'Product C' },
-    //     //     { href: '#product-d', label: 'Product D' },
-    //     // ],
-    // },
-    // {
-    //     label: 'تتبع الشحنات',
-    //     submenu: false,
-    //     // type: 'icon',
-    //     // items: [
-    //     //     { href: '#getting-started', label: 'Getting Started', icon: 'BookOpenIcon' },
-    //     //     { href: '#tutorials', label: 'Tutorials', icon: 'LifeBuoyIcon' },
-    //     //     { href: '#about-us', label: 'About Us', icon: 'InfoIcon' },
-    //     // ],
-    // },
-    // {
-    //     label: 'الأسئلة الشائعة',
-    //     submenu: false,
-    //     // type: 'icon',
-    //     // items: [
-    //     //     { href: '#getting-started', label: 'Getting Started', icon: 'BookOpenIcon' },
-    //     //     { href: '#tutorials', label: 'Tutorials', icon: 'LifeBuoyIcon' },
-    //     //     { href: '#about-us', label: 'About Us', icon: 'InfoIcon' },
-    //     // ],
-    // },
-    // {
-    //     label: 'تواصل معنا',
-    //     submenu: false,
-    //     // type: 'icon',
-    //     // items: [
-    //     //     { href: '#getting-started', label: 'Getting Started', icon: 'BookOpenIcon' },
-    //     //     { href: '#tutorials', label: 'Tutorials', icon: 'LifeBuoyIcon' },
-    //     //     { href: '#about-us', label: 'About Us', icon: 'InfoIcon' },
-    //     // ],
-    // },
+    // ...(same as before)
 ];
+
+function useActiveSection(hrefs: (string | undefined)[]) {
+    const [activeId, setActiveId] = React.useState<string | undefined>(undefined);
+
+    React.useEffect(() => {
+        function handler() {
+            const hashHrefs = hrefs.filter(Boolean).filter((href) => href!.startsWith('#')) as string[];
+            let found: string | undefined = undefined;
+
+            for (let i = 0; i < hashHrefs.length; i++) {
+                const href = hashHrefs[i];
+                const id = href.replace('#', '');
+                const el = document.getElementById(id);
+                if (!el) continue;
+                const rect = el.getBoundingClientRect();
+                if (rect.top <= 80 && rect.bottom >= 80) {
+                    found = href;
+                    break;
+                }
+            }
+            if (!found && hashHrefs.length > 0) {
+                // fallback to first if at page top
+                const firstEl = document.getElementById(hashHrefs[0].replace('#', ''));
+                if (firstEl && window.scrollY < firstEl.offsetTop) {
+                    found = hashHrefs[0];
+                }
+            }
+            setActiveId(found);
+        }
+
+        window.addEventListener('scroll', handler, { passive: true });
+        handler();
+        return () => window.removeEventListener('scroll', handler);
+    }, [hrefs.join(',')]);
+
+    return activeId;
+}
 
 export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
     (
@@ -242,6 +195,10 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
             }
         };
 
+        // 1. Track which section is active based on the scroll position
+        const linkHrefs = navigationLinks.map((n) => n.href);
+        const activeHref = useActiveSection(linkHrefs);
+
         return (
             <header
                 ref={combinedRef}
@@ -292,7 +249,12 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
                                                     ) : (
                                                         <button
                                                             onClick={(e) => e.preventDefault()}
-                                                            className='flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer no-underline'
+                                                            className={cn(
+                                                                'flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer no-underline',
+                                                                activeHref === link.href
+                                                                    ? 'bg-accent text-accent-foreground font-bold'
+                                                                    : ''
+                                                            )}
                                                         >
                                                             {link.label}
                                                         </button>
@@ -409,8 +371,11 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
                                                 ) : (
                                                     <NavigationMenuLink
                                                         href={link.href}
-                                                        className={cn(navigationMenuTriggerStyle(), 'cursor-pointer')}
-                                                        onClick={(e) => e.preventDefault()}
+                                                        className={cn(
+                                                            navigationMenuTriggerStyle(),
+                                                            'cursor-pointer font-ibm-plex-sans-arabic text-[16px]',
+                                                            activeHref === link.href ? 'bg-background! text-brand' : ''
+                                                        )}
                                                     >
                                                         {link.label}
                                                     </NavigationMenuLink>
@@ -463,7 +428,33 @@ const ListItem = React.forwardRef<
         type?: 'description' | 'simple' | 'icon';
         children?: React.ReactNode;
     }
->(({ className, title, children, icon, type, ...props }, ref) => {
+>(({ className, title, children, icon, type, href, ...props }, ref) => {
+    // Optionally: highlight ListItem also when the sub link's href matches the section
+    const [isActive, setIsActive] = React.useState(false);
+
+    React.useEffect(() => {
+        if (!href || !href.startsWith('#')) {
+            setIsActive(false);
+            return;
+        }
+
+        const sectionId = href.replace('#', '');
+
+        function onScroll() {
+            const el = document.getElementById(sectionId);
+            if (el) {
+                const rect = el.getBoundingClientRect();
+                setIsActive(rect.top <= 80 && rect.bottom >= 80);
+            } else {
+                setIsActive(false);
+            }
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+        return () => window.removeEventListener('scroll', onScroll);
+    }, [href]);
+    // fallback to active logic: could be unified with parent if needed
+
     const renderIconComponent = (iconName?: string) => {
         if (!iconName) return null;
         switch (iconName) {
@@ -485,7 +476,8 @@ const ListItem = React.forwardRef<
                 onClick={(e) => e.preventDefault()}
                 className={cn(
                     'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer',
-                    className
+                    className,
+                    isActive ? 'bg-accent text-accent-foreground font-bold' : ''
                 )}
                 {...(props as any)}
             >

@@ -14,6 +14,7 @@ import { FaAppStore } from 'react-icons/fa6';
 import { FaGooglePlay } from 'react-icons/fa6';
 import { FaShippingFast } from 'react-icons/fa';
 import { TextAnimate } from '@/components/ui/text-animate';
+import HLine from '@/components/HLine';
 // 3193d8a f214b23
 
 const fadeInUp = (delay = 0, duration = 0.7, y = 30) => ({
@@ -63,8 +64,9 @@ function CursorCircle() {
 export default function Hero() {
     useEffect(() => {
         const lenis = new Lenis({
-            duration: 0.9,
+            duration: 1.5,
             smoothWheel: true,
+            // easing: (t) => Math.min(1, 1.001 - Math.pow(6, -10 * t)),
         });
 
         function raf(time: number) {
@@ -78,9 +80,12 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className='py-[150px] w-full overflow-hidden relative'>
+        <section className='py-[150px] w-full overflow-hidden relative' id='hero'>
             {/* Cursor Follower Circle */}
             <CursorCircle />
+            <div className='flex absolute top-16.5 flex-col items-center justify-center w-full mx-auto'>
+                <HLine />
+            </div>
 
             <FlickeringGrid
                 className='absolute inset-0 z-0 mask-[radial-gradient(1000px_circle_at_center,white,transparent)]'
@@ -116,8 +121,8 @@ export default function Hero() {
                     animate='animate'
                 >
                     <motion.div variants={fadeInUp(0.05)}>
-                        <div className='cursor-default bg-muted inline-flex gap-2 items-center border w-fit backdrop-blur-lg rounded-xl px-5 py-1'>
-                            <BsStars />
+                        <div className='cursor-default bg-background  shadow-[0_5px_20px_rgba(0,0,0,0.07)] inline-flex gap-2 items-center border border-muted-foreground/10 w-fit backdrop-blur-lg rounded-xl px-5 py-1 text-[16px] font-ibm-plex-sans-arabic'>
+                            <BsStars className='text-brand' />
                             بوليصة هي الإختيار الأنسب والأكثر أمانًا للشحن المتميز
                             <BorderBeam size={50} className='from-transparent via-orange-500 to-transparent' />
                         </div>

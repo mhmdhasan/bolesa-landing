@@ -7,6 +7,7 @@ import WhoIsItForSection from './(home-sections)/WhoIsItForSection';
 import FeaturesSection from './(home-sections)/FeaturesSection';
 import CarriersSection from './(home-sections)/CarriersSection';
 import TestimonialsSection from './(home-sections)/TestimonialsSection';
+import PricingSection from './(home-sections)/PricingSection';
 
 export default function Home() {
     return (
@@ -19,6 +20,7 @@ export default function Home() {
             <FeaturesSection />
             <CarriersSection />
             <TestimonialsSection />
+            <PricingSection />
             <div
                 className="
                     pointer-events-none 

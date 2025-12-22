@@ -38,7 +38,10 @@ const howItWorks = [
 
 export default function HowItWorksSection() {
     return (
-        <section className='py-[90px] w-full overflow-hidden relative'>
+        <section
+            className='py-[100px] w-full overflow-hidden relative selection:text-[#352322] selection:bg-[rgba(247,191,180,0.27)]'
+            id='how-it-works'
+        >
             <div className='w-full h-[300px] bg-linear-to-b from-[#f77972] to-background absolute top-0 opacity-5'></div>
             <FlickeringGrid
                 className='absolute inset-0 z-0 mask-[radial-gradient(1000px_circle_at_center,white,transparent)]'
@@ -89,7 +92,7 @@ export default function HowItWorksSection() {
                         <motion.div
                             key={idx}
                             className='bg-muted rounded-3xl p-1.5 gap-4 flex flex-col'
-                            variants={fadeInUp(0.1 + idx * 0.13, 0.4)}
+                            variants={fadeInUp(0.1 + idx * 0.13, 0.8, 60)}
                             initial='initial'
                             whileInView='animate'
                             viewport={{ once: true, amount: 0.4 }}

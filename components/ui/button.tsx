@@ -54,8 +54,9 @@ const buttonVariants = cva(
                     'transition-all',
                     'shadow-[4px_3px_10px_0px_#45090059]',
                     '[background:linear-gradient(140.14deg,_#f28247_15.05%,_#d6361f_114.99%)_padding-box,linear-gradient(142.51deg,_#f28247_8.65%,_#d6361f_88.82%)_border-box]',
-                    'hover:opacity-80',
+                    'hover:opacity-90',
                     'hover:shadow-none',
+                    'duration-300',
                 ].join(' '),
                 store: '',
             },
@@ -111,8 +112,9 @@ function Button({
                 'cursor-pointer',
                 'transition-all',
                 'shadow-[4px_3px_10px_0px_#00000066]',
-                'hover:opacity-80',
+                'hover:opacity-90',
                 'hover:shadow-none',
+                'duration-300',
             ].join(' '),
             className
         );

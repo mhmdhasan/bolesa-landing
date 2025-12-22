@@ -13,7 +13,10 @@ const fadeInUp = (delay = 0, duration = 0.7, y = 30, blurFrom = 8, blurTo = 0) =
 
 export default function FeaturesSection() {
     return (
-        <section className='py-[90px] w-full overflow-hidden relative'>
+        <section
+            className='py-[90px] w-full overflow-hidden relative selection:text-[#363c27] selection:bg-[rgba(144,180,54,0.12)]'
+            id='features'
+        >
             <div className='w-full h-[300px] bg-linear-to-b from-[#91b436] to-background absolute top-0 opacity-5'></div>
             <FlickeringGrid
                 className='absolute inset-0 z-0 mask-[radial-gradient(1000px_circle_at_center,white,transparent)]'

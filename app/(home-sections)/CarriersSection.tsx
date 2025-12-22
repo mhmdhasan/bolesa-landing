@@ -107,7 +107,10 @@ export default function CarriersSection() {
                 <div className='py-3'></div>
                 <HLine borderColor='#f28247' addBeam={true} />
             </div>
-            <section className='py-[90px] w-full overflow-hidden relative'>
+            <section
+                className='py-[90px] w-full overflow-hidden relative selection:text-[#523c30] selection:bg-[rgba(242,130,71,0.29)]'
+                id='carriers'
+            >
                 <div className='w-full h-[300px] bg-linear-to-b from-[#f28247] to-background absolute top-0 opacity-5'></div>
                 <FlickeringGrid
                     className='absolute inset-0 z-0 mask-[radial-gradient(1000px_circle_at_center,white,transparent)]'

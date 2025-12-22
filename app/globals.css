@@ -157,6 +157,16 @@
     }
     body {
         @apply bg-background text-foreground;
+    }
+    ::selection {
+        background: rgba(255, 170, 80, 0.354); /* Light orange background */
+        color: #6c2c00; /* Optional: darker text for contrast */
+    }
+    ::-moz-selection {
+        background: #ffe4c7;
+        color: #6c2c00;
+    }
+    html {
         scroll-behavior: smooth;
     }
 
