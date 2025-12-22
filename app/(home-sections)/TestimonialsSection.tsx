@@ -61,7 +61,7 @@ const testimonials = [
     },
 ];
 
-export default function FAQsSection() {
+export default function TestimonialsSection() {
     return (
         <>
             <div className='relative flex flex-col items-center justify-center w-full mx-auto'>

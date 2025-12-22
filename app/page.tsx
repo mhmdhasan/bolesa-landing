@@ -6,7 +6,7 @@ import HowItWorksSection from './(home-sections)/HowItWorksSection';
 import WhoIsItForSection from './(home-sections)/WhoIsItForSection';
 import FeaturesSection from './(home-sections)/FeaturesSection';
 import CarriersSection from './(home-sections)/CarriersSection';
-import FAQsSection from './(home-sections)/FAQsSection';
+import TestimonialsSection from './(home-sections)/TestimonialsSection';
 
 export default function Home() {
     return (
@@ -18,7 +18,7 @@ export default function Home() {
             <WhoIsItForSection />
             <FeaturesSection />
             <CarriersSection />
-            <FAQsSection />
+            <TestimonialsSection />
             <div
                 className="
                     pointer-events-none 
