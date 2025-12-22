@@ -88,7 +88,7 @@ export default function HowItWorksSection() {
                     {howItWorks.map((step, idx) => (
                         <motion.div
                             key={idx}
-                            className='bg-muted rounded-3xl p-1 gap-4 flex flex-col'
+                            className='bg-muted rounded-3xl p-1.5 gap-4 flex flex-col'
                             variants={fadeInUp(0.1 + idx * 0.13, 0.4)}
                             initial='initial'
                             whileInView='animate'
@@ -123,7 +123,7 @@ export default function HowItWorksSection() {
                                     className={`w-full h-auto max-w-[160px] object-cover`}
                                 />
                             </motion.div>
-                            <div className='bg-background rounded-2xl shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
+                            <div className='bg-background rounded-2xl shadow-[0_3px_6px_rgba(0,0,0,0.085)]'>
                                 <div className='py-5 px-5 text-start space-y-1'>
                                     <h3 className='font-ibm-plex-sans-arabic font-bold text-lg'>
                                         {/* {step.title} */}

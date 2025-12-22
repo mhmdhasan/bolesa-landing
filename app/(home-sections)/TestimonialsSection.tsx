@@ -143,7 +143,7 @@ export default function TestimonialsSection() {
                                 },
                             }}
                             loop={true}
-                            speed={6000}
+                            speed={10000}
                             modules={[Autoplay]}
                             centeredSlides={true}
                             autoplay={{
@@ -172,7 +172,19 @@ export default function TestimonialsSection() {
                                                     </div>
                                                 </h3>
                                                 <div className='font-ibm-plex-sans-arabic font-bold text-md'>
+                                                    <span
+                                                        className='font-bold text-muted-foreground/50 me-1'
+                                                        aria-hidden='true'
+                                                    >
+                                                        ”
+                                                    </span>
                                                     {testimonial.text}
+                                                    <span
+                                                        className='font-bold text-muted-foreground ms-1'
+                                                        aria-hidden='true'
+                                                    >
+                                                        “
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
