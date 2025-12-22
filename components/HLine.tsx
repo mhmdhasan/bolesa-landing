@@ -15,7 +15,7 @@ export default function HLine({
     return (
         <div
             style={borderColor ? { borderBottomColor: borderColor, opacity: 0.8 } : undefined}
-            className={cn('border-b border-dotted w-[120vw] relative border-neutral-400', className)}
+            className={cn('border-b border-dotted w-[120vw] relative border-foreground/20', className)}
         >
             {addBeam && (
                 <BorderBeam
