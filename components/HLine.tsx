@@ -5,10 +5,12 @@ export default function HLine({
     className,
     borderColor,
     addBeam,
+    reverseBeam,
 }: {
     className?: string;
     borderColor?: string;
     addBeam?: boolean;
+    reverseBeam?: boolean;
 }) {
     return (
         <div
@@ -22,6 +24,7 @@ export default function HLine({
                     colorTo={borderColor || '#444'}
                     delay={Math.random() * 7}
                     duration={15}
+                    reverse={reverseBeam}
                 />
             )}
             <div className='absolute w-[1300px] top-0 start-[50%] translate-x-[50%]'>

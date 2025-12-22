@@ -198,7 +198,7 @@ export default function WhoIsItForSection() {
             </section>
             <HLine />
             <div className='py-3'></div>
-            <HLine borderColor='#91b436' />
+            <HLine borderColor='#91b436' addBeam reverseBeam />
         </div>
     );
 }

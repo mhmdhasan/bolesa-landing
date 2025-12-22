@@ -425,15 +425,19 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
                     {/* Right side */}
                     <div className='flex items-center gap-3'>
                         <Button
-                            variant='ghost'
-                            size='sm'
+                            variant='outline'
+                            asChild
                             className='text-sm font-medium hover:bg-accent hover:text-accent-foreground'
-                            onClick={(e) => {
-                                e.preventDefault();
-                                if (onSignInClick) onSignInClick();
-                            }}
                         >
-                            {signInText}
+                            <Link href='tel:1234567890' className='inline-flex items-center py-2.5! gap-3!'>
+                                <span className='text-[12px] leading-none!'>اتصل بنا</span>
+                                <span
+                                    className='font-bold font-ibm-plex-sans-arabic leading-none! text-[17px]'
+                                    style={{ direction: 'ltr' }}
+                                >
+                                    +966552993266
+                                </span>
+                            </Link>
                         </Button>
                         <Button variant='store' className='text-sm font-medium px-4 h-9 rounded-md shadow-sm' asChild>
                             <Link href={ctaHref} target='_blank'>

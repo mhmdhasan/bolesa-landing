@@ -78,7 +78,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className='py-[100px] w-full overflow-hidden relative'>
+        <section className='py-[150px] w-full overflow-hidden relative'>
             {/* Cursor Follower Circle */}
             <CursorCircle />
 
@@ -89,7 +89,7 @@ export default function Hero() {
                 color='#ccc'
                 maxOpacity={0.3}
                 flickerChance={0.1}
-                height={500}
+                height={800}
                 width={2000}
             />
             <div className='max-w-[1110px] mt-10 w-full mx-auto relative'>
@@ -127,10 +127,15 @@ export default function Hero() {
                             <TextAnimate className='inline-block' animation='blurInUp' by='word' once>
                                 أقوى
                             </TextAnimate>{' '}
-                            <Highlighter action='highlight' strokeWidth={1.5} iterations={4} color='#f28247'>
-                                <span className='cursor-default font-ibm-plex-sans-arabic relative z-20 text-white'>
-                                    منصة شحن
-                                </span>
+                            <Highlighter
+                                action='underline'
+                                strokeWidth={4.5}
+                                padding={10}
+                                iterations={2}
+                                color='#f28247'
+                                isView={true}
+                            >
+                                <span className='cursor-default font-ibm-plex-sans-arabic relative z-20'>منصة شحن</span>
                             </Highlighter>{' '}
                             <TextAnimate className='inline-block' animation='blurInUp' by='word' once>
                                 للمتاجر الإلكترونية
