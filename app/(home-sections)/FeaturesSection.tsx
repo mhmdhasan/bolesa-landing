@@ -26,7 +26,7 @@ export default function FeaturesSection() {
                 width={2000}
             />
             <div className='w-full h-[300px] bg-linear-to-b from-transparent to-background absolute top-0 z-10'></div>
-            <div className='max-w-[1300px] w-full mx-auto relative z-20 text-center px-5'>
+            <div className='max-w-[1200px] w-full mx-auto relative z-20 text-center px-5'>
                 <div className='grid grid-cols-1 xl:grid-cols-12 gap-3 items-end'>
                     <div className='flex flex-col items-start xl:col-span-7'>
                         <motion.div variants={fadeInUp(0.05)} className='mb-4'>

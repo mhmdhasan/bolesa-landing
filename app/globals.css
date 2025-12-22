@@ -309,6 +309,7 @@
     }
     .swiper-wrapper {
         transition-timing-function: linear !important;
+        align-items: stretch !important;
     }
 
     .framer-11wenrb {
