@@ -10,6 +10,9 @@ import HLine from '@/components/HLine';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { FaShippingFast } from 'react-icons/fa';
 
 const fadeInUp = (delay = 0, duration = 0.7, y = 30, blur = 20) => ({
     initial: { opacity: 0, y, filter: `blur(${blur}px)` },
@@ -202,6 +205,30 @@ export default function TestimonialsSection() {
                     </motion.div>
                     <div className='absolute h-full w-20 lg:w-40 bg-linear-to-l from-background to-transparent top-0 right-0 z-20'></div>
                     <div className='absolute h-full w-20 lg:w-40 bg-linear-to-r from-background to-transparent top-0 left-0 z-20'></div>
+                </div>
+
+                <div className='flex items-center justify-center gap-3 flex-wrap mt-10 z-100 relative'>
+                    <Button
+                        asChild
+                        variant={'store'}
+                        className='px-4! text-[16px]! shadow-[1px_3px_8px_rgba(0,0,0,0.2)]'
+                    >
+                        <Link target='_blank' href={'https://app.bolesa.net'}>
+                            ابدأ الشحن الآن
+                            <FaShippingFast className='size-5 shrink-0 rotate-y-180' />
+                        </Link>
+                    </Button>
+                    <Button
+                        asChild
+                        variant={'store'}
+                        className='px-4! text-[16px]! shadow-[1px_3px_8px_rgba(0,0,0,0.2)]'
+                        customPattern={['#d4c96a', '#969412']}
+                    >
+                        <Link target='_blank' href={'https://bolesa.net'}>
+                            احكى تجربتك معنا
+                            <FaStar className='size-4 shrink-0 rotate-y-180' />
+                        </Link>
+                    </Button>
                 </div>
             </section>
         </>

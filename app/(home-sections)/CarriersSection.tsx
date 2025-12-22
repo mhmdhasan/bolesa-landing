@@ -154,7 +154,7 @@ export default function CarriersSection() {
                                 customPattern={['#d6361f', '#f28247']}
                                 asChild
                                 variant='store'
-                                className='px-4! py-2! text-[15px]! shadow-[1px_3px_8px_rgba(0,0,0,0.2)]'
+                                className='px-4! text-[16px]! shadow-[1px_3px_8px_rgba(0,0,0,0.2)]'
                             >
                                 <Link target='_blank' href={'https://app.bolesa.net'}>
                                     اشحن الآن
@@ -268,7 +268,7 @@ export default function CarriersSection() {
                                     />
                                 </div>
                             </div>
-                            <OrbitingCircles radius={240} iconSize={70} speed={0.5}>
+                            <OrbitingCircles radius={240} iconSize={70} speed={0}>
                                 {carrierImages.map((image, index) => (
                                     <div
                                         key={index}
@@ -285,7 +285,7 @@ export default function CarriersSection() {
                                     </div>
                                 ))}
                             </OrbitingCircles>
-                            <OrbitingCircles reverse radius={138} iconSize={70} speed={0.5}>
+                            <OrbitingCircles reverse radius={138} iconSize={70} speed={0}>
                                 {carrierImages2.map((image, index) => (
                                     <div
                                         key={index}

@@ -125,29 +125,11 @@ export default function HowItWorksSection() {
                             </motion.div>
                             <div className='bg-background rounded-2xl shadow-[0_3px_6px_rgba(0,0,0,0.085)]'>
                                 <div className='py-5 px-5 text-start space-y-1'>
-                                    <h3 className='font-ibm-plex-sans-arabic font-bold text-lg'>
-                                        {/* {step.title} */}
-                                        <TextAnimate
-                                            className='inline-block'
-                                            animation='blurInUp'
-                                            by='word'
-                                            duration={1}
-                                            once
-                                        >
-                                            {step.title}
-                                        </TextAnimate>
-                                    </h3>
+                                    <h3 className='font-ibm-plex-sans-arabic font-bold text-lg'>{step.title}</h3>
                                     <div className='text-muted-foreground font-medium text-sm'>
                                         {/* {step.description} */}
-                                        <TextAnimate
-                                            className='inline-block'
-                                            animation='blurInUp'
-                                            by='word'
-                                            duration={1}
-                                            once
-                                        >
-                                            {step.description}
-                                        </TextAnimate>
+
+                                        {step.description}
                                     </div>
                                 </div>
                             </div>
