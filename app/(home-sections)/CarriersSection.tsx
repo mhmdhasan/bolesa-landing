@@ -268,7 +268,7 @@ export default function CarriersSection() {
                                     />
                                 </div>
                             </div>
-                            <OrbitingCircles radius={240} iconSize={70} speed={0}>
+                            <OrbitingCircles radius={240} iconSize={70} speed={0.05}>
                                 {carrierImages.map((image, index) => (
                                     <div
                                         key={index}
@@ -285,7 +285,7 @@ export default function CarriersSection() {
                                     </div>
                                 ))}
                             </OrbitingCircles>
-                            <OrbitingCircles reverse radius={138} iconSize={70} speed={0}>
+                            <OrbitingCircles reverse radius={138} iconSize={70} speed={0.05}>
                                 {carrierImages2.map((image, index) => (
                                     <div
                                         key={index}
