@@ -78,11 +78,11 @@ export default function TestimonialsSection() {
             >
                 <div className='w-full h-[300px] bg-linear-to-b from-[#d4c96a] to-background absolute top-0 opacity-5'></div>
                 <FlickeringGrid
-                    className='absolute inset-0 z-0 mask-[radial-gradient(1000px_circle_at_center,white,transparent)]'
+                    className='absolute inset-0 z-0 mask-[radial-gradient(800px_circle_at_center,white,transparent)]'
                     squareSize={4}
                     gridGap={6}
                     color='#d4c96a'
-                    maxOpacity={0.3}
+                    maxOpacity={0.2}
                     flickerChance={0.1}
                     height={300}
                     width={2000}

@@ -8,19 +8,33 @@ import FeaturesSection from './(home-sections)/FeaturesSection';
 import CarriersSection from './(home-sections)/CarriersSection';
 import TestimonialsSection from './(home-sections)/TestimonialsSection';
 import PricingSection from './(home-sections)/PricingSection';
+import FAQsSection from './(home-sections)/FAQsSection';
+import CTASection from './(home-sections)/CTASection';
+import SecuritySection from './(home-sections)/SecuritySection';
 
 export default function Home() {
     return (
         <div className='flex flex-col overflow-x-hidden relative'>
+            <div
+                className='fixed inset-0 z-999 pointer-events-none'
+                aria-hidden='true'
+                style={{
+                    background: 'rgba(35,35,35,0.04)',
+                    mixBlendMode: 'multiply',
+                }}
+            />
             <Header />
             <Hero />
             <LogoSlider />
             <HowItWorksSection />
             <WhoIsItForSection />
             <FeaturesSection />
+            <SecuritySection />
             <CarriersSection />
             <TestimonialsSection />
             <PricingSection />
+            <FAQsSection />
+            <CTASection />
             <div
                 className="
                     pointer-events-none 

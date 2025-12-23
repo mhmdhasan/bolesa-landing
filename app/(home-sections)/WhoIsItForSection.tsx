@@ -79,7 +79,7 @@ export default function WhoIsItForSection() {
             <HLine />
             <div className='py-3'></div>
             <HLine />
-            <section className='py-[80px] w-full overflow-hidden relative' id='who-is-it-for'>
+            <section className='py-[100px] w-full overflow-hidden relative' id='who-is-it-for'>
                 <div className='max-w-[1300px] w-full mx-auto relative z-20 text-center'>
                     <motion.h2
                         variants={fadeInUp(0.05)}

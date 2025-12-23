@@ -44,11 +44,11 @@ export default function HowItWorksSection() {
         >
             <div className='w-full h-[300px] bg-linear-to-b from-[#f77972] to-background absolute top-0 opacity-5'></div>
             <FlickeringGrid
-                className='absolute inset-0 z-0 mask-[radial-gradient(1000px_circle_at_center,white,transparent)]'
+                className='absolute inset-0 z-0 mask-[radial-gradient(800px_circle_at_center,white,transparent)]'
                 squareSize={4}
                 gridGap={6}
                 color='#f77972'
-                maxOpacity={0.3}
+                maxOpacity={0.2}
                 flickerChance={0.1}
                 height={300}
                 width={2000}
@@ -126,7 +126,7 @@ export default function HowItWorksSection() {
                                     className={`w-full h-auto max-w-[160px] object-cover`}
                                 />
                             </motion.div>
-                            <div className='bg-background rounded-2xl shadow-[0_3px_6px_rgba(0,0,0,0.085)]'>
+                            <div className='bg-background rounded-2xl shadow-[0_3px_7px_rgba(0,0,0,0.09)]'>
                                 <div className='py-5 px-5 text-start space-y-1'>
                                     <h3 className='font-ibm-plex-sans-arabic font-bold text-lg'>{step.title}</h3>
                                     <div className='text-muted-foreground font-medium text-sm'>

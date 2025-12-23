@@ -21,7 +21,7 @@ const carrierImages = [
     {
         src: '/aramex-del.png',
         alt: 'ارامكس',
-        width: 120,
+        width: 200,
         height: 100,
         delay: 0,
     },
@@ -35,14 +35,14 @@ const carrierImages = [
     {
         src: '/smsa.png',
         alt: 'يو بي اس',
-        width: 120,
+        width: 200,
         height: 100,
         delay: 200,
     },
     {
         src: '/jt_express.png',
         alt: 'مخدوم',
-        width: 120,
+        width: 200,
         height: 100,
         delay: 300,
     },
@@ -56,7 +56,7 @@ const carrierImages = [
     {
         src: '/kwick-box.png',
         alt: 'كويك بوكس',
-        width: 120,
+        width: 200,
         height: 100,
         delay: 400,
     },
@@ -65,21 +65,21 @@ const carrierImages2 = [
     {
         src: '/redbox.svg',
         alt: 'ريد بوكس',
-        width: 120,
+        width: 200,
         height: 100,
         delay: 400,
     },
     {
         src: '/third_mile.png',
         alt: 'ثرد مايل',
-        width: 120,
+        width: 200,
         height: 100,
         delay: 400,
     },
     {
         src: '/fastlo.png',
         alt: 'فاستلو',
-        width: 120,
+        width: 200,
         height: 100,
         delay: 400,
     },
@@ -99,25 +99,27 @@ const carrierImages2 = [
     },
 ];
 
+// #f28246 //7
+
 export default function CarriersSection() {
     return (
         <>
             <div className='relative flex flex-col items-center justify-center w-full mx-auto'>
                 <HLine />
                 <div className='py-3'></div>
-                <HLine borderColor='#f28247' addBeam={true} />
+                <HLine borderColor='#6ca36a' addBeam={true} />
             </div>
             <section
-                className='py-[90px] w-full overflow-hidden relative selection:text-[#523c30] selection:bg-[rgba(242,130,71,0.29)]'
+                className='py-[100px] w-full overflow-hidden relative selection:text-[#30472f] selection:bg-[rgba(135,208,142,0.29)]'
                 id='carriers'
             >
-                <div className='w-full h-[300px] bg-linear-to-b from-[#f28247] to-background absolute top-0 opacity-5'></div>
+                <div className='w-full h-[300px] bg-linear-to-b from-[#6ca36a] to-background absolute top-0 opacity-5'></div>
                 <FlickeringGrid
-                    className='absolute inset-0 z-0 mask-[radial-gradient(1000px_circle_at_center,white,transparent)]'
+                    className='absolute inset-0 z-0 mask-[radial-gradient(800px_circle_at_center,white,transparent)]'
                     squareSize={4}
                     gridGap={6}
-                    color='#f28247'
-                    maxOpacity={0.3}
+                    color='#6ca36a'
+                    maxOpacity={0.2}
                     flickerChance={0.1}
                     height={300}
                     width={2000}
@@ -126,10 +128,10 @@ export default function CarriersSection() {
                 <div className='max-w-[1300px] w-full mx-auto relative z-20 text-center px-5 grid grid-cols-1 xl:grid-cols-2 items-center'>
                     <div className='flex flex-col items-center mb-10'>
                         <motion.div variants={fadeInUp(0.05)} className='mb-4'>
-                            <div className='cursor-default bg-[#f28247]/5 border border-[#f28247]/20 inline-flex gap-2 items-center w-fit backdrop-blur-lg text-md rounded-3xl px-5 py-1 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <FaCircle className='size-3 text-[#f28247]' />
+                            <div className='cursor-default bg-[#6ca36a]/5 border border-[#6ca36a]/20 inline-flex gap-2 items-center w-fit backdrop-blur-lg text-md rounded-3xl px-5 py-1 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
+                                <FaCircle className='size-3 text-[#6ca36a]' />
                                 شركاء النجاح
-                                <BorderBeam size={50} className='from-transparent via-[#f28247] to-transparent' />
+                                <BorderBeam size={50} className='from-transparent via-[#6ca36a] to-transparent' />
                             </div>
                         </motion.div>
                         <motion.h2
@@ -154,7 +156,7 @@ export default function CarriersSection() {
                             className='flex items-center justify-center gap-2 flex-wrap'
                         >
                             <Button
-                                customPattern={['#d6361f', '#f28247']}
+                                customPattern={['#557d54', '#6ca36a']}
                                 asChild
                                 variant='store'
                                 className='px-4! text-[16px]! shadow-[1px_3px_8px_rgba(0,0,0,0.2)]'
@@ -175,7 +177,7 @@ export default function CarriersSection() {
                         <div className='relative flex h-[550px] w-full flex-col items-center justify-center overflow-hidden'>
                             <div className='w-auto aspect-square h-[70%] absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 rounded-full shadow-[inset_0_0_10px_rgba(0,0,0,0.08)]'>
                                 {/* <BorderBeam
-                                    colorFrom='#f28247'
+                                    colorFrom='#6ca36a'
                                     colorTo='#d6361f'
                                     className='z-99 relative'
                                     size={100}
@@ -183,7 +185,7 @@ export default function CarriersSection() {
                             </div>
                             <div className='w-auto aspect-square h-[50%] absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 rounded-full shadow-[inset_0_0_10px_rgba(0,0,0,0.08)]'>
                                 {/* <BorderBeam
-                                    colorFrom='#f28247'
+                                    colorFrom='#6ca36a'
                                     colorTo='#d6361f'
                                     className='z-99 relative'
                                     size={100}
@@ -192,7 +194,7 @@ export default function CarriersSection() {
                             </div>
                             <div className='w-auto aspect-square h-[30%] absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 rounded-full shadow-[inset_0_0_10px_rgba(0,0,0,0.08)]'>
                                 {/* <BorderBeam
-                                    colorFrom='#f28247'
+                                    colorFrom='#6ca36a'
                                     colorTo='#d6361f'
                                     className='z-99 relative'
                                     size={100}
@@ -200,7 +202,7 @@ export default function CarriersSection() {
                             </div>
                             <div className='w-auto aspect-square h-[15%] absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 rounded-full shadow-[inset_0_0_10px_rgba(0,0,0,0.08)]'>
                                 {/* <BorderBeam
-                                    colorFrom='#f28247'
+                                    colorFrom='#6ca36a'
                                     colorTo='#d6361f'
                                     className='z-99 relative'
                                     size={100}
@@ -222,7 +224,7 @@ export default function CarriersSection() {
                                     className='framer-8jf8ke opacity-50'
                                     style={{
                                         background:
-                                            'radial-gradient(50% 50%, rgba(0, 151, 254, 0.15) 0%, rgba(227, 148, 0, 0) 100%)',
+                                            'radial-gradient(50% 50%, rgba(77, 196, 140, 0.15) 0%, rgba(227, 148, 0, 0) 100%)',
                                     }}
                                 />
                                 <div
@@ -236,28 +238,28 @@ export default function CarriersSection() {
                                     className='framer-ppd9z0 opacity-50'
                                     style={{
                                         background:
-                                            'radial-gradient(50% 50%, rgba(243, 71, 255, 0.15) 0%, rgba(227, 148, 0, 0) 100%)',
+                                            'radial-gradient(50% 50%, rgba(77, 196, 113, 0.15) 0%, rgba(227, 148, 0, 0) 100%)',
                                     }}
                                 />
                                 <div
                                     className='framer-12hpzgp opacity-50'
                                     style={{
                                         background:
-                                            'radial-gradient(50% 50%, rgba(153, 102, 255, 0.15) 0%, rgba(227, 148, 0, 0) 100%)',
+                                            'radial-gradient(50% 50%, rgba(77, 194, 196, 0.15) 0%, rgba(227, 148, 0, 0) 100%)',
                                     }}
                                 />
                                 <div
                                     className='framer-6li7ng opacity-50'
                                     style={{
                                         background:
-                                            'radial-gradient(50% 50%, rgba(255, 71, 71, 0.25) 0%, rgba(227, 148, 0, 0) 100%)',
+                                            'radial-gradient(50% 50%, rgba(77, 196, 140, 0.25) 0%, rgba(227, 148, 0, 0) 100%)',
                                     }}
                                 />
                                 <div
                                     className='framer-1n0mvn2 opacity-50'
                                     style={{
                                         background:
-                                            'radial-gradient(50% 50%, rgba(71, 114, 255, 0.25) 0%, rgba(227, 148, 0, 0) 100%)',
+                                            'radial-gradient(50% 50%, rgba(168, 196, 77, 0.25) 0%, rgba(227, 148, 0, 0) 100%)',
                                     }}
                                 />
                                 <div className='framer-1v7kf7i z-20 relative w-24 h-24 bg-background/80 backdrop-blur-md rounded-2xl ring-6 ring-muted-foreground/15 shadow-[0_3px_8px_rgba(0,0,0,0.25)]'>
@@ -271,7 +273,7 @@ export default function CarriersSection() {
                                     />
                                 </div>
                             </div>
-                            <OrbitingCircles radius={240} iconSize={70} speed={0.05}>
+                            <OrbitingCircles radius={240} iconSize={70} speed={0.1}>
                                 {carrierImages.map((image, index) => (
                                     <div
                                         key={index}
@@ -288,7 +290,7 @@ export default function CarriersSection() {
                                     </div>
                                 ))}
                             </OrbitingCircles>
-                            <OrbitingCircles reverse radius={138} iconSize={70} speed={0.05}>
+                            <OrbitingCircles reverse radius={138} iconSize={70} speed={0.1}>
                                 {carrierImages2.map((image, index) => (
                                     <div
                                         key={index}
@@ -298,8 +300,8 @@ export default function CarriersSection() {
                                         <Image
                                             src={image.src}
                                             alt={image.alt}
-                                            width={image.width}
-                                            height={image.height}
+                                            width={250}
+                                            height={300}
                                             className='relative z-10'
                                         />
                                     </div>
