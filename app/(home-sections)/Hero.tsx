@@ -93,12 +93,12 @@ export default function Hero() {
                 gridGap={6}
                 color='#ccc'
                 maxOpacity={0.3}
-                flickerChance={0.1}
+                flickerChance={0.2}
                 height={800}
                 width={2000}
             />
             <div className='max-w-[1110px] mt-10 w-full mx-auto relative'>
-                <div className='framer-1hdn25l absolute inset-0 top-20 opacity-20'>
+                <div className='framer-1hdn25l absolute inset-0 top-20 opacity-50'>
                     <div className='framer-upm3bh'></div>
                     <div className='framer-1v27kjt'></div>
                     <div className='framer-tc2tc4'></div>
