@@ -41,7 +41,7 @@ export default function HowItWorksSection() {
     return (
         <section
             className='py-[100px] w-full overflow-hidden relative selection:text-[#352322] selection:bg-[rgba(247,191,180,0.27)]'
-            id='how-it-works'
+            id='howitworks'
         >
             <div className='w-full h-[300px] bg-linear-to-b from-[#f77972] to-background absolute top-0 opacity-5'></div>
             <FlickeringGrid

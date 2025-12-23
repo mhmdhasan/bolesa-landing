@@ -52,7 +52,7 @@ const faqs = [
 export default function FAQsSection() {
     return (
         <>
-            <div className='flex  flex-col items-center justify-center w-full mx-auto'>
+            <div className='flex  flex-col items-center justify-center w-full mx-auto' id='faq'>
                 <HLine />
                 <div className='py-3'></div>
                 <HLine />
