@@ -13,6 +13,7 @@ import 'swiper/css';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { FaShippingFast } from 'react-icons/fa';
+import SectionBadge from '@/components/SectionBadge';
 
 const fadeInUp = (delay = 0, duration = 0.7, y = 30, blur = 20) => ({
     initial: { opacity: 0, y, filter: `blur(${blur}px)` },
@@ -89,13 +90,7 @@ export default function TestimonialsSection() {
                 />
                 <div className='w-full h-[300px] bg-linear-to-b from-transparent to-background absolute top-0 z-10'></div>
                 <div className='max-w-[1300px] w-full mx-auto relative z-20 text-center'>
-                    <motion.div variants={fadeInUp(0.05)} className='mb-4'>
-                        <div className='cursor-default bg-[#d4c96a]/5 border border-[#d4c96a]/20 inline-flex gap-2 items-center w-fit backdrop-blur-lg text-md rounded-3xl px-5 py-1 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                            <FaCircle className='size-3 text-[#d4c96a]' />
-                            آراء العملاء
-                            <BorderBeam size={50} className='from-transparent via-[#d4c96a] to-transparent' />
-                        </div>
-                    </motion.div>
+                    <SectionBadge title='آراء العملاء' color='#d4c96a' />
                     <motion.h2
                         variants={fadeInUp(0.05)}
                         className='cursor-default font-ibm-plex-sans-arabic relative font-extrabold text-3xl lg:text-4xl leading-[50px]'

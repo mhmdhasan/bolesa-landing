@@ -7,6 +7,7 @@ import { TextAnimate } from '@/components/ui/text-animate';
 import { BorderBeam } from '@/components/ui/border-beam';
 import { FaCircle } from 'react-icons/fa6';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import SectionBadge from '@/components/SectionBadge';
 
 const fadeInUp = (delay = 0, duration = 0.7, y = 30, blur = 20) => ({
     initial: { opacity: 0, y, filter: `blur(${blur}px)` },
@@ -71,13 +72,7 @@ export default function FAQsSection() {
                 <div className='w-full h-[300px] bg-linear-to-b from-transparent to-background absolute top-0 z-10'></div>
                 <div className='max-w-[1250px] w-full mx-auto relative z-20 px-5 items-start grid grid-cols-1 lg:grid-cols-12 gap-10'>
                     <div className='flex flex-col items-start mb-10 lg:col-span-5'>
-                        <motion.div variants={fadeInUp(0.05)} className='mb-4'>
-                            <div className='cursor-default bg-[#dddddd]/5 border border-[#dddddd]/20 inline-flex gap-2 items-center w-fit backdrop-blur-lg text-md rounded-3xl px-5 py-1 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <FaCircle className='size-3 text-[#555555]' />
-                                الاسئلة الشائعة
-                                <BorderBeam size={50} className='from-transparent via-[#dddddd] to-transparent' />
-                            </div>
-                        </motion.div>
+                        <SectionBadge title='الاسئلة الشائعة' color='#666' />
                         <motion.h2
                             variants={fadeInUp(0.05)}
                             className='cursor-default font-ibm-plex-sans-arabic relative font-extrabold text-3xl lg:text-4xl leading-[50px]'

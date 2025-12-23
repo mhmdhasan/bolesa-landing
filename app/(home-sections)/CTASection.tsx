@@ -10,6 +10,7 @@ import { HiArrowNarrowLeft } from 'react-icons/hi';
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import SectionBadge from '@/components/SectionBadge';
 
 const fadeInUp = (delay = 0, duration = 0.7, y = 30, blur = 20) => ({
     initial: { opacity: 0, y, filter: `blur(${blur}px)` },
@@ -23,7 +24,10 @@ export default function CTASection() {
                 className='py-[20px] w-full overflow-hidden relative selection:text-[#333] selection:bg-[rgba(51,51,51,0.12)]'
                 id='cta'
             >
-                <div className='flex justify-center items-center translate-y-[30px]'>
+                <div className='flex justify-center items-center translate-y-[50px] mb-5'>
+                    <HLine borderColor='#333' />
+                </div>
+                <div className='flex justify-center items-center translate-y-[50px]'>
                     <HLine borderColor='#333' />
                 </div>
                 <div className='max-w-[1200px] border-foreground/20 bg-background py-[90px] w-full mx-auto relative z-20 text-center rounded-3xl'>
@@ -66,13 +70,7 @@ export default function CTASection() {
 
                     <div className='w-full relative z-20'>
                         <div className='flex flex-col items-center text-center'>
-                            <motion.div variants={fadeInUp(0.05)} className='mb-4'>
-                                <div className='cursor-default bg-[#333]/5 border border-[#333]/20 inline-flex gap-2 items-center w-fit backdrop-blur-lg text-md rounded-3xl px-5 py-1 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                    <FaCircle className='size-3 text-[#333]' />
-                                    ابدأ الشحن الآن
-                                    <BorderBeam size={50} className='from-transparent via-[#333] to-transparent' />
-                                </div>
-                            </motion.div>
+                            <SectionBadge title='ابدأ الشحن الآن' color='#333' />
                             <motion.h2
                                 variants={fadeInUp(0.05)}
                                 className='cursor-default font-ibm-plex-sans-arabic relative font-extrabold text-3xl lg:text-4xl leading-[50px]'
@@ -103,7 +101,10 @@ export default function CTASection() {
                         </div>
                     </div>
                 </div>
-                <div className='flex justify-center translate-y-[-30px] items-center'>
+                <div className='flex justify-center translate-y-[-50px] items-center'>
+                    <HLine borderColor='#333' />
+                </div>
+                <div className='flex justify-center translate-y-[-50px] items-center mt-5'>
                     <HLine borderColor='#333' />
                 </div>
             </section>

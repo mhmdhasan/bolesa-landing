@@ -19,7 +19,7 @@ export default function Home() {
                 className='fixed inset-0 z-999 pointer-events-none'
                 aria-hidden='true'
                 style={{
-                    background: 'rgba(35,35,35,0.04)',
+                    background: 'rgba(35,35,35,0.02)',
                     mixBlendMode: 'multiply',
                 }}
             />

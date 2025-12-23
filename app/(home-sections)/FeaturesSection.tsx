@@ -5,6 +5,7 @@ import { TextAnimate } from '@/components/ui/text-animate';
 import { motion } from 'motion/react';
 import { FaCircle } from 'react-icons/fa6';
 import { LuBrain, LuChartNoAxesCombined } from 'react-icons/lu';
+import SectionBadge from '@/components/SectionBadge';
 
 const fadeInUp = (delay = 0, duration = 0.7, y = 30, blurFrom = 8, blurTo = 0) => ({
     initial: { opacity: 0, y, filter: `blur(${blurFrom}px)` },
@@ -32,13 +33,7 @@ export default function FeaturesSection() {
             <div className='max-w-[1200px] w-full mx-auto relative z-20 text-center px-5'>
                 <div className='grid grid-cols-1 xl:grid-cols-12 gap-3 items-end'>
                     <div className='flex flex-col items-start xl:col-span-7'>
-                        <motion.div variants={fadeInUp(0.05)} className='mb-4'>
-                            <div className='cursor-default bg-[#91b436]/5 border border-[#91b436]/20 inline-flex gap-2 items-center w-fit backdrop-blur-lg text-md rounded-3xl px-5 py-1 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <FaCircle className='size-3 text-[#91b436]' />
-                                لماذا بوليصة؟
-                                <BorderBeam size={50} className='from-transparent via-[#91b436] to-transparent' />
-                            </div>
-                        </motion.div>
+                        <SectionBadge title='لماذا بوليصة؟' color='#91b436' />
                         <motion.h2
                             variants={fadeInUp(0.05)}
                             className='cursor-default font-ibm-plex-sans-arabic relative font-extrabold text-3xl lg:text-4xl leading-[50px]'

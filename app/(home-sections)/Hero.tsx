@@ -98,7 +98,7 @@ export default function Hero() {
                 width={2000}
             />
             <div className='max-w-[1110px] mt-10 w-full mx-auto relative'>
-                <div className='framer-1hdn25l absolute inset-0 top-20 opacity-50'>
+                <div className='framer-1hdn25l absolute inset-0 top-20 opacity-20'>
                     <div className='framer-upm3bh'></div>
                     <div className='framer-1v27kjt'></div>
                     <div className='framer-tc2tc4'></div>
@@ -154,24 +154,24 @@ export default function Hero() {
                         </TextAnimate>
                     </motion.div>
                     <motion.div
-                        className='p-1 bg-muted/30 relative z-20 rounded-2xl border-2 border-muted-foreground/10 ring-3 ring-muted-foreground/5 grid grid-cols-1 xl:grid-cols-3 gap-2 w-full max-w-3xl'
+                        className='p-1 bg-muted/30 relative z-20 rounded-2xl border-2 border-muted-foreground/10 ring-3 ring-muted-foreground/5 grid grid-cols-1 xl:grid-cols-3 gap-2 w-full max-w-2xl'
                         variants={fadeInUp(0.32)}
                     >
                         <motion.div variants={fadeInUp(0.35, 0.6, 10)}>
-                            <div className='rounded-xl cursor-default bg-background/60 backdrop-blur-sm p-4 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <p className='text-2xl font-bold font-ibm-plex-sans-arabic'>2M</p>
+                            <div className='rounded-xl cursor-default bg-background/60 backdrop-blur-sm px-4 py-5 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
+                                <p className='text-3xl font-bold font-ibm-plex-sans-arabic'>2M</p>
                                 <p>بوليصة</p>
                             </div>
                         </motion.div>
                         <motion.div variants={fadeInUp(0.41, 0.6, 10)}>
-                            <div className='rounded-xl bg-background/60 backdrop-blur-sm p-4 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <p className='text-2xl font-bold font-ibm-plex-sans-arabic'>4000+</p>
+                            <div className='rounded-xl bg-background/60 backdrop-blur-sm px-4 py-5 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
+                                <p className='text-3xl font-bold font-ibm-plex-sans-arabic'>4000+</p>
                                 <p>عميل</p>
                             </div>
                         </motion.div>
                         <motion.div variants={fadeInUp(0.47, 0.6, 10)}>
-                            <div className='rounded-xl bg-background/60 backdrop-blur-sm p-4 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <p className='text-2xl font-bold font-ibm-plex-sans-arabic'>99.8%</p>
+                            <div className='rounded-xl bg-background/60 backdrop-blur-sm px-4 py-5 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
+                                <p className='text-3xl font-bold font-ibm-plex-sans-arabic'>99.8%</p>
                                 <p>نسبة نجاح</p>
                             </div>
                         </motion.div>

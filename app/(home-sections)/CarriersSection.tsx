@@ -10,6 +10,7 @@ import HLine from '@/components/HLine';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { FaShippingFast } from 'react-icons/fa';
+import SectionBadge from '@/components/SectionBadge';
 
 const fadeInUp = (delay = 0, duration = 0.7, y = 30, blurFrom = 8, blurTo = 0) => ({
     initial: { opacity: 0, y, filter: `blur(${blurFrom}px)` },
@@ -127,13 +128,7 @@ export default function CarriersSection() {
                 <div className='w-full h-[300px] bg-linear-to-b from-transparent to-background absolute top-0 z-10'></div>
                 <div className='max-w-[1300px] w-full mx-auto relative z-20 text-center px-5 grid grid-cols-1 xl:grid-cols-2 items-center'>
                     <div className='flex flex-col items-center mb-10'>
-                        <motion.div variants={fadeInUp(0.05)} className='mb-4'>
-                            <div className='cursor-default bg-[#6ca36a]/5 border border-[#6ca36a]/20 inline-flex gap-2 items-center w-fit backdrop-blur-lg text-md rounded-3xl px-5 py-1 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <FaCircle className='size-3 text-[#6ca36a]' />
-                                شركاء النجاح
-                                <BorderBeam size={50} className='from-transparent via-[#6ca36a] to-transparent' />
-                            </div>
-                        </motion.div>
+                        <SectionBadge title='شركائنا في الشحن والتوزيع' color='#6ca36a' />
                         <motion.h2
                             variants={fadeInUp(0.05)}
                             className='cursor-default font-ibm-plex-sans-arabic relative font-extrabold text-3xl lg:text-4xl leading-[50px]'
