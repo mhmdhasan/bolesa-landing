@@ -5,6 +5,7 @@ import { BorderBeam } from './ui/border-beam';
 import { RiLogoutCircleFill } from 'react-icons/ri';
 
 import { TextAnimate } from './ui/text-animate';
+import { TextReveal } from './ui/text-reveal';
 
 const fadeInUp = (delay = 0, duration = 0.7, y = 30, blurFrom = 8, blurTo = 0) => ({
     initial: { opacity: 0, y, filter: `blur(${blurFrom}px)` },
@@ -28,9 +29,16 @@ export default function SectionBadge({ title, color }: { title: string; color: s
                 }}
             >
                 <RiLogoutCircleFill className='size-4' style={{ color: color }} />
-                <TextAnimate className='inline-block' animation='slideRight' duration={0.5} by='word' once>
+                <TextReveal
+                    className='inline-flex w-full justify-center text-wrap flex-wrap whitespace-pre-wrap'
+                    variant='fade'
+                    wordLevel={true}
+                    duration={1.5}
+                    delay={0.5}
+                    staggerDelay={0.1}
+                >
                     {title}
-                </TextAnimate>
+                </TextReveal>
                 <BorderBeam
                     size={50}
                     style={{
