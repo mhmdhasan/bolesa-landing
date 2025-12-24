@@ -38,7 +38,7 @@ export default function Home() {
             <div
                 className="
                     pointer-events-none 
-                    max-w-[1300px] 
+                    max-w-[calc(100%-1.5rem)] lg:max-w-[1300px] 
                     h-full 
                     w-full 
                     absolute 
