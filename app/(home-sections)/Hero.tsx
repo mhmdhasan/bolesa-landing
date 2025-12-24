@@ -160,14 +160,15 @@ export default function Hero() {
                     >
                         <motion.div variants={fadeInUp(0.35, 0.6, 10)}>
                             <div className='rounded-xl flex justify-center flex-col items-center cursor-default bg-background/60 backdrop-blur-sm px-4 py-5 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <SlidingNumber
-                                    from={0}
-                                    to={2000000}
-                                    duration={1}
-                                    className='text-3xl font-bold font-ibm-plex-sans-arabic'
-                                    digitHeight={35}
-                                />
-
+                                <div className='flex items-center justify-center'>
+                                    <SlidingNumber
+                                        from={0}
+                                        to={2000000}
+                                        duration={1}
+                                        className='text-3xl font-bold font-ibm-plex-sans-arabic'
+                                        digitHeight={35}
+                                    />
+                                </div>
                                 <p>بوليصة</p>
                             </div>
                         </motion.div>
