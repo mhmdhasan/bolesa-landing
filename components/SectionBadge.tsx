@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'motion/react';
-import { MdLightbulbCircle } from 'react-icons/md';
 import { BorderBeam } from './ui/border-beam';
 import { RiLogoutCircleFill } from 'react-icons/ri';
 
@@ -19,16 +18,26 @@ export default function SectionBadge({ title, color }: { title: string; color: s
             initial='initial'
             whileInView='animate'
             viewport={{ once: true, amount: 0.3 }}
-            className='mb-4'
+            className='mb-4 z-99'
         >
             <div
-                className={`cursor-default bg-[${color}]/5 border border-[${color}]/20 inline-flex gap-2 items-center w-fit backdrop-blur-lg text-md rounded-3xl px-5 py-1 shadow-[0_1px_5px_rgba(0,0,0,0.07)]`}
+                className='cursor-default inline-flex gap-2 items-center w-fit backdrop-blur-lg text-md rounded-3xl px-5 py-1 shadow-[0_1px_5px_rgba(0,0,0,0.07)] border'
+                style={{
+                    background: `${color}0D`, // 0D = ~5% alpha, for most hex colors
+                    borderColor: `${color}33`, // 33 = ~20% alpha, for most hex colors
+                }}
             >
-                <RiLogoutCircleFill className={`size-4 text-[${color}]`} />
+                <RiLogoutCircleFill className='size-4' style={{ color: color }} />
                 <TextAnimate className='inline-block' animation='slideRight' duration={0.5} by='word' once>
                     {title}
                 </TextAnimate>
-                <BorderBeam size={50} className={`from-transparent via-[${color}] to-transparent`} />
+                <BorderBeam
+                    size={50}
+                    style={{
+                        background: `linear-gradient(90deg, transparent 0%, ${color} 50%, transparent 100%)`,
+                    }}
+                    className=''
+                />
             </div>
         </motion.div>
     );
