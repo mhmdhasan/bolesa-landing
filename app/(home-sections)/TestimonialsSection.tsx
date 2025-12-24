@@ -93,13 +93,13 @@ export default function TestimonialsSection() {
                     <SectionBadge title='آراء العملاء' color='#d4c96a' />
                     <motion.h2
                         variants={fadeInUp(0.05)}
-                        className='cursor-default font-ibm-plex-sans-arabic relative font-extrabold text-3xl lg:text-4xl leading-[50px]'
+                        className='cursor-default px-6 lg:px-0 font-ibm-plex-sans-arabic relative font-extrabold text-3xl lg:text-4xl leading-[50px]'
                     >
                         <TextAnimate className='inline-block' animation='blurInUp' duration={0.7} by='word' once>
                             تجربة عملائنا تتحدث عنا
                         </TextAnimate>
                     </motion.h2>
-                    <motion.div variants={fadeInUp(0.53)} className='text-neutral-6700  mb-5'>
+                    <motion.div variants={fadeInUp(0.53)} className='text-neutral-6700 px-6 lg:px-0 mb-5'>
                         <TextAnimate
                             className='inline-block max-w-xl mx-auto'
                             animation='blurInUp'
@@ -200,9 +200,9 @@ export default function TestimonialsSection() {
                                 </SwiperSlide>
                             ))}
                         </Swiper>
+                        <div className='absolute h-full w-20 lg:w-40 bg-linear-to-l from-background to-transparent top-0 right-0 z-20'></div>
+                        <div className='absolute h-full w-20 lg:w-40 bg-linear-to-r from-background to-transparent top-0 left-0 z-20'></div>
                     </motion.div>
-                    <div className='absolute h-full w-20 lg:w-40 bg-linear-to-l from-background to-transparent top-0 right-0 z-20'></div>
-                    <div className='absolute h-full w-20 lg:w-40 bg-linear-to-r from-background to-transparent top-0 left-0 z-20'></div>
                 </div>
 
                 <div className='flex items-center justify-center gap-3 flex-wrap mt-10 z-100 relative'>

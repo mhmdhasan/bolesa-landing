@@ -70,7 +70,7 @@ export default function FAQsSection() {
                     width={2000}
                 />
                 <div className='w-full h-[300px] bg-linear-to-b from-transparent to-background absolute top-0 z-10'></div>
-                <div className='max-w-[1250px] w-full mx-auto relative z-20 px-5 items-start grid grid-cols-1 lg:grid-cols-12 gap-10'>
+                <div className='max-w-[1250px] w-full mx-auto px-6 lg:px-5 relative z-20 items-start grid grid-cols-1 lg:grid-cols-12 lg:gap-10'>
                     <div className='flex flex-col items-start mb-10 lg:col-span-5'>
                         <SectionBadge title='الاسئلة الشائعة' color='#666' />
                         <motion.h2
@@ -81,14 +81,14 @@ export default function FAQsSection() {
                                 تحتاج إجابات لأسئلتك؟
                             </TextAnimate>
                         </motion.h2>
-                        <motion.div variants={fadeInUp(0.53)} className='text-neutral-6700 max-w-lg mx-auto mb-5 mt-4'>
+                        <motion.div variants={fadeInUp(0.53)} className='text-neutral-6700 max-w-lg mb-5 mt-4'>
                             <TextAnimate className='inline-block' animation='blurInUp' by='word' duration={1} once>
                                 جمعنا هنا أكثر الأسئلة التي يطرحها أصحاب المتاجر الإلكترونية حول بوليصة، لمساعدتك على
                                 فهم الخدمة واتخاذ القرار المناسب بسهولة.
                             </TextAnimate>
                         </motion.div>
                     </div>
-                    <div className='lg:col-span-1'></div>
+                    <div className='lg:col-span-1 hidden lg:block'></div>
                     <motion.div
                         variants={fadeInUp(0.53)}
                         initial='initial'
@@ -124,8 +124,6 @@ export default function FAQsSection() {
             </section>
             <div className='flex  flex-col items-center justify-center w-full mx-auto'>
                 <HLine />
-                {/* <div className='py-3'></div>
-                <HLine /> */}
             </div>
         </>
     );

@@ -55,7 +55,7 @@ export default function HowItWorksSection() {
                 width={2000}
             />
             <div className='w-full h-[300px] bg-linear-to-b from-transparent to-background absolute top-0 z-10'></div>
-            <div className='max-w-[1110px] w-full mx-auto relative z-20 text-center'>
+            <div className='max-w-[1110px] w-full mx-auto relative z-20 text-center px-6 lg:px-0'>
                 <motion.div variants={fadeInUp(0.05)} className='mb-4'>
                     <SectionBadge title='آلية عمل بوليصة' color='#f77972' />
                 </motion.div>
@@ -63,17 +63,14 @@ export default function HowItWorksSection() {
                     variants={fadeInUp(0.05)}
                     className='cursor-default font-ibm-plex-sans-arabic relative font-extrabold text-3xl lg:text-4xl leading-[50px]'
                 >
-                    <TextAnimate className='inline-block' animation='blurInUp' duration={0.7} by='word' once>
-                        أسرع, وأسهل طريقة
-                    </TextAnimate>
                     <TextAnimate
-                        className='inline-block text-neutral-600 ms-2'
+                        className='inline-block leading-normal!'
                         animation='blurInUp'
                         duration={0.7}
                         by='word'
                         once
                     >
-                        لشحن منتجاتكم الى عملائكم
+                        أسرع, وأسهل طريقة لشحن منتجاتكم الى عملائكم
                     </TextAnimate>
                 </motion.h2>
                 <motion.div variants={fadeInUp(0.53)} className='text-neutral-6700  mb-5'>

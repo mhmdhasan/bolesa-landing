@@ -80,12 +80,18 @@ export default function WhoIsItForSection() {
             <div className='py-3'></div>
             <HLine />
             <section className='py-[100px] w-full overflow-hidden relative' id='who-is-it-for'>
-                <div className='max-w-[1300px] w-full mx-auto relative z-20 text-center'>
+                <div className='max-w-[1300px] px-6 lg:px-0 w-full mx-auto relative z-20 text-center'>
                     <motion.h2
                         variants={fadeInUp(0.05)}
                         className='cursor-default font-ibm-plex-sans-arabic relative font-extrabold text-3xl lg:text-4xl leading-[50px]'
                     >
-                        <TextAnimate className='inline-block' animation='blurInUp' duration={0.7} by='word' once>
+                        <TextAnimate
+                            className='inline-block leading-normal!'
+                            animation='blurInUp'
+                            duration={0.7}
+                            by='word'
+                            once
+                        >
                             بوليصة مصممة لكل أنواع المتاجر الإلكترونية
                         </TextAnimate>
                     </motion.h2>
@@ -107,13 +113,13 @@ export default function WhoIsItForSection() {
                         <Swiper
                             className='w-full mb-2'
                             spaceBetween={10}
-                            slidesPerView={5}
+                            slidesPerView={1}
                             breakpoints={{
                                 765: {
-                                    slidesPerView: 3,
+                                    slidesPerView: 1,
                                 },
                                 991: {
-                                    slidesPerView: 4,
+                                    slidesPerView: 3,
                                 },
                                 1200: {
                                     slidesPerView: 5,
@@ -151,13 +157,13 @@ export default function WhoIsItForSection() {
                         <Swiper
                             className='w-full'
                             spaceBetween={10}
-                            slidesPerView={5}
+                            slidesPerView={1}
                             breakpoints={{
                                 765: {
                                     slidesPerView: 3,
                                 },
                                 991: {
-                                    slidesPerView: 4,
+                                    slidesPerView: 3,
                                 },
                                 1200: {
                                     slidesPerView: 5,

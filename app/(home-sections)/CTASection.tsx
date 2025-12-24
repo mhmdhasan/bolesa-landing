@@ -21,7 +21,7 @@ export default function CTASection() {
     return (
         <>
             <section
-                className='py-[20px] w-full overflow-hidden relative selection:text-[#333] selection:bg-[rgba(51,51,51,0.12)]'
+                className=' px-6 py-[20px] w-full overflow-hidden relative selection:text-[#333] selection:bg-[rgba(51,51,51,0.12)]'
                 id='cta'
             >
                 <div className='flex justify-center items-center translate-y-[50px] mb-5'>
@@ -68,7 +68,7 @@ export default function CTASection() {
                     />
                     <div className='w-full h-[150px] bg-linear-to-b from-transparent to-background absolute top-0 z-10'></div>
 
-                    <div className='w-full relative z-20'>
+                    <div className='w-full relative z-20 px-5'>
                         <div className='flex flex-col items-center text-center'>
                             <SectionBadge title='ابدأ الشحن الآن' color='#333' />
                             <motion.h2
@@ -76,7 +76,7 @@ export default function CTASection() {
                                 className='cursor-default font-ibm-plex-sans-arabic relative font-extrabold text-3xl lg:text-4xl leading-[50px]'
                             >
                                 <TextAnimate
-                                    className='inline-block'
+                                    className='inline-block leading-normal!'
                                     animation='blurInUp'
                                     duration={0.7}
                                     by='word'

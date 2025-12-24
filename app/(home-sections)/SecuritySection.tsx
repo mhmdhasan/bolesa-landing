@@ -73,13 +73,19 @@ export default function SecuritySection() {
             <div className='py-3'></div>
             <HLine />
             <section className='py-[100px] w-full overflow-hidden relative' id='who-is-it-for'>
-                <div className='max-w-[1200px] w-full mx-auto relative z-20 text-center'>
+                <div className='max-w-[1200px] px-6 lg:px-0 w-full mx-auto relative z-20 text-center'>
                     <SectionBadge title='الأمان والموثوقية' color='#333' />
                     <motion.h2
                         variants={fadeInUp(0.05)}
                         className='cursor-default font-ibm-plex-sans-arabic relative font-extrabold text-3xl lg:text-4xl leading-[50px]'
                     >
-                        <TextAnimate className='inline-block' animation='blurInUp' duration={0.7} by='word' once>
+                        <TextAnimate
+                            className='inline-block leading-normal!'
+                            animation='blurInUp'
+                            duration={0.7}
+                            by='word'
+                            once
+                        >
                             أمان، موثوقية، واعتمادية
                         </TextAnimate>
                     </motion.h2>

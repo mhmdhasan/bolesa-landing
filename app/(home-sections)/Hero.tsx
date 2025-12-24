@@ -98,7 +98,7 @@ export default function Hero() {
                 height={800}
                 width={2000}
             />
-            <div className='max-w-[1110px] mt-10 w-full mx-auto relative'>
+            <div className='max-w-[1110px] mt-10 w-full mx-auto relative px-6 lg:px-0'>
                 <div className='framer-1hdn25l absolute inset-0 top-20 opacity-20'>
                     <div className='framer-upm3bh'></div>
                     <div className='framer-1v27kjt'></div>
@@ -129,7 +129,7 @@ export default function Hero() {
                         </div>
                     </motion.div>
                     <motion.div variants={fadeInUp(0.15)}>
-                        <h1 className='cursor-default font-ibm-plex-sans-arabic relative font-extrabold text-3xl lg:text-6xl leading-[50px]'>
+                        <h1 className='cursor-default font-ibm-plex-sans-arabic relative font-extrabold text-5xl lg:text-6xl leading-[50px]'>
                             <TextAnimate className='inline-block' animation='blurInUp' by='word' once>
                                 أقوى
                             </TextAnimate>{' '}
