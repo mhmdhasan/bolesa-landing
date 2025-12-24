@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { FaShippingFast } from 'react-icons/fa';
 import SectionBadge from '@/components/SectionBadge';
+import useMobile from '@/app/hooks/useMobile';
 
 const fadeInUp = (delay = 0, duration = 0.7, y = 30, blurFrom = 8, blurTo = 0) => ({
     initial: { opacity: 0, y, filter: `blur(${blurFrom}px)` },
@@ -103,6 +104,7 @@ const carrierImages2 = [
 // #f28246 //7
 
 export default function CarriersSection() {
+    const isMobile = useMobile();
     return (
         <>
             <div className='relative flex flex-col items-center justify-center w-full mx-auto'>
@@ -268,7 +270,7 @@ export default function CarriersSection() {
                                     />
                                 </div>
                             </div>
-                            <OrbitingCircles radius={240} iconSize={70} speed={0.1}>
+                            <OrbitingCircles radius={isMobile ? 180 : 240} iconSize={isMobile ? 60 : 70} speed={0.1}>
                                 {carrierImages.map((image, index) => (
                                     <div
                                         key={index}
@@ -285,7 +287,12 @@ export default function CarriersSection() {
                                     </div>
                                 ))}
                             </OrbitingCircles>
-                            <OrbitingCircles reverse radius={138} iconSize={70} speed={0.1}>
+                            <OrbitingCircles
+                                reverse
+                                radius={isMobile ? 100 : 138}
+                                iconSize={isMobile ? 60 : 70}
+                                speed={0.1}
+                            >
                                 {carrierImages2.map((image, index) => (
                                     <div
                                         key={index}

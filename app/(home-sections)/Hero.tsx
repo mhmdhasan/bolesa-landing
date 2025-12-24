@@ -16,6 +16,7 @@ import { FaShippingFast } from 'react-icons/fa';
 import { TextAnimate } from '@/components/ui/text-animate';
 import HLine from '@/components/HLine';
 import { SlidingNumber } from '@/components/ui/sliding-number';
+import useMobile from '@/app/hooks/useMobile';
 // 3193d8a f214b23
 
 const fadeInUp = (delay = 0, duration = 0.7, y = 30) => ({
@@ -63,6 +64,7 @@ function CursorCircle() {
 }
 
 export default function Hero() {
+    const isMobile = useMobile();
     useEffect(() => {
         const lenis = new Lenis({
             duration: 1.5,
@@ -141,7 +143,7 @@ export default function Hero() {
                             <Highlighter
                                 action='underline'
                                 strokeWidth={4.5}
-                                padding={10}
+                                padding={isMobile ? 4 : 10}
                                 iterations={2}
                                 color='#f28247'
                                 isView={true}
