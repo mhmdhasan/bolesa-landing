@@ -15,6 +15,7 @@ import { FaGooglePlay } from 'react-icons/fa6';
 import { FaShippingFast } from 'react-icons/fa';
 import { TextAnimate } from '@/components/ui/text-animate';
 import HLine from '@/components/HLine';
+import { SlidingNumber } from '@/components/ui/sliding-number';
 // 3193d8a f214b23
 
 const fadeInUp = (delay = 0, duration = 0.7, y = 30) => ({
@@ -158,20 +159,53 @@ export default function Hero() {
                         variants={fadeInUp(0.32)}
                     >
                         <motion.div variants={fadeInUp(0.35, 0.6, 10)}>
-                            <div className='rounded-xl cursor-default bg-background/60 backdrop-blur-sm px-4 py-5 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <p className='text-3xl font-bold font-ibm-plex-sans-arabic'>2M</p>
+                            <div className='rounded-xl flex justify-center flex-col items-center cursor-default bg-background/60 backdrop-blur-sm px-4 py-5 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
+                                <SlidingNumber
+                                    from={0}
+                                    to={2000000}
+                                    duration={1}
+                                    className='text-3xl font-bold font-ibm-plex-sans-arabic'
+                                    digitHeight={35}
+                                />
+
                                 <p>بوليصة</p>
                             </div>
                         </motion.div>
                         <motion.div variants={fadeInUp(0.41, 0.6, 10)}>
-                            <div className='rounded-xl bg-background/60 backdrop-blur-sm px-4 py-5 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <p className='text-3xl font-bold font-ibm-plex-sans-arabic'>4000+</p>
+                            <div className='rounded-xl bg-background/60 backdrop-blur-sm flex justify-center items-center flex-col px-4 py-5 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
+                                <div className='flex items-center gap-2'>
+                                    <SlidingNumber
+                                        from={0}
+                                        to={4000}
+                                        duration={1}
+                                        className='text-3xl font-bold font-ibm-plex-sans-arabic'
+                                        digitHeight={35}
+                                    />
+                                    <span className='text-3xl font-bold font-ibm-plex-sans-arabic'>+</span>
+                                </div>
                                 <p>عميل</p>
                             </div>
                         </motion.div>
                         <motion.div variants={fadeInUp(0.47, 0.6, 10)}>
-                            <div className='rounded-xl bg-background/60 backdrop-blur-sm px-4 py-5 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <p className='text-3xl font-bold font-ibm-plex-sans-arabic'>99.8%</p>
+                            <div className='rounded-xl bg-background/60 backdrop-blur-sm flex justify-center items-center flex-col px-4 py-5 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
+                                <div className='flex items-center'>
+                                    <span className='text-3xl font-bold font-ibm-plex-sans-arabic'>%</span>
+                                    <SlidingNumber
+                                        from={0}
+                                        to={8}
+                                        duration={1}
+                                        className='text-3xl font-bold font-ibm-plex-sans-arabic'
+                                        digitHeight={35}
+                                    />
+                                    <span className='text-3xl font-bold font-ibm-plex-sans-arabic'>.</span>
+                                    <SlidingNumber
+                                        from={0}
+                                        to={99}
+                                        duration={1}
+                                        className='text-3xl font-bold font-ibm-plex-sans-arabic'
+                                        digitHeight={35}
+                                    />
+                                </div>
                                 <p>نسبة نجاح</p>
                             </div>
                         </motion.div>
