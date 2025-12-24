@@ -81,7 +81,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className='py-[150px] w-full overflow-hidden relative' id='hero'>
+        <section className='py-[80px] lg:py-[150px] w-full overflow-hidden relative' id='hero'>
             {/* Cursor Follower Circle */}
             <CursorCircle />
             <div className='flex absolute top-16.5 flex-col items-center justify-center w-full mx-auto'>
