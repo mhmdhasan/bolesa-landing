@@ -122,14 +122,19 @@ export default function Hero() {
                     animate='animate'
                 >
                     <motion.div variants={fadeInUp(0.05)}>
-                        <div className='cursor-default bg-background  shadow-[0_5px_20px_rgba(0,0,0,0.07)] inline-flex gap-2 items-center border border-muted-foreground/10 w-fit backdrop-blur-lg rounded-xl px-5 py-1 text-[16px] font-ibm-plex-sans-arabic'>
+                        <div className='cursor-default bg-background  shadow-[0_5px_20px_rgba(0,0,0,0.07)] hidden lg:inline-flex gap-2 items-center border border-muted-foreground/10 w-fit backdrop-blur-lg rounded-xl px-5 py-1 text-[16px] font-ibm-plex-sans-arabic'>
                             <BsStars className='text-brand' />
                             بوليصة هي الإختيار الأنسب والأكثر أمانًا للشحن المتميز
                             <BorderBeam size={50} className='from-transparent via-orange-500 to-transparent' />
                         </div>
+                        <div className='cursor-default bg-background shadow-[0_5px_20px_rgba(0,0,0,0.07)] inline-flex lg:hidden gap-2 items-center border border-muted-foreground/10 w-fit backdrop-blur-lg rounded-xl px-5 py-1 text-[16px] font-ibm-plex-sans-arabic'>
+                            <BsStars className='text-brand' />
+                            بوليصة هي الإختيار الأنسب للشحن المتميز
+                            <BorderBeam size={50} className='from-transparent via-orange-500 to-transparent' />
+                        </div>
                     </motion.div>
                     <motion.div variants={fadeInUp(0.15)}>
-                        <h1 className='cursor-default font-ibm-plex-sans-arabic relative font-extrabold text-5xl lg:text-6xl leading-[50px]'>
+                        <h1 className='cursor-default font-ibm-plex-sans-arabic relative font-extrabold text-[44px] lg:text-6xl leading-[50px]'>
                             <TextAnimate className='inline-block' animation='blurInUp' by='word' once>
                                 أقوى
                             </TextAnimate>{' '}
@@ -160,52 +165,22 @@ export default function Hero() {
                     >
                         <motion.div variants={fadeInUp(0.35, 0.6, 10)}>
                             <div className='rounded-xl flex justify-center flex-col items-center cursor-default bg-background/60 backdrop-blur-sm px-4 py-5 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <div className='flex items-center justify-center'>
-                                    <SlidingNumber
-                                        from={0}
-                                        to={2000000}
-                                        duration={1}
-                                        className='text-3xl font-bold font-ibm-plex-sans-arabic'
-                                        digitHeight={35}
-                                    />
+                                <div className='flex items-center justify-center text-3xl font-bold font-ibm-plex-sans-arabic'>
+                                    2,000,000
                                 </div>
                                 <p>بوليصة</p>
                             </div>
                         </motion.div>
                         <motion.div variants={fadeInUp(0.41, 0.6, 10)}>
                             <div className='rounded-xl bg-background/60 backdrop-blur-sm flex justify-center items-center flex-col px-4 py-5 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <div className='flex items-center gap-2'>
-                                    <SlidingNumber
-                                        from={0}
-                                        to={4000}
-                                        duration={1}
-                                        className='text-3xl font-bold font-ibm-plex-sans-arabic'
-                                        digitHeight={35}
-                                    />
-                                    <span className='text-3xl font-bold font-ibm-plex-sans-arabic'>+</span>
-                                </div>
+                                <span className='text-3xl font-bold font-ibm-plex-sans-arabic'>+4000</span>
                                 <p>عميل</p>
                             </div>
                         </motion.div>
                         <motion.div variants={fadeInUp(0.47, 0.6, 10)}>
                             <div className='rounded-xl bg-background/60 backdrop-blur-sm flex justify-center items-center flex-col px-4 py-5 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <div className='flex items-center'>
-                                    <span className='text-3xl font-bold font-ibm-plex-sans-arabic'>%</span>
-                                    <SlidingNumber
-                                        from={0}
-                                        to={8}
-                                        duration={1}
-                                        className='text-3xl font-bold font-ibm-plex-sans-arabic'
-                                        digitHeight={35}
-                                    />
-                                    <span className='text-3xl font-bold font-ibm-plex-sans-arabic'>.</span>
-                                    <SlidingNumber
-                                        from={0}
-                                        to={99}
-                                        duration={1}
-                                        className='text-3xl font-bold font-ibm-plex-sans-arabic'
-                                        digitHeight={35}
-                                    />
+                                <div className='flex items-center text-3xl font-bold font-ibm-plex-sans-arabic'>
+                                    99.7%
                                 </div>
                                 <p>نسبة نجاح</p>
                             </div>
