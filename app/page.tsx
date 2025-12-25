@@ -11,6 +11,7 @@ import PricingSection from './(home-sections)/PricingSection';
 import FAQsSection from './(home-sections)/FAQsSection';
 import CTASection from './(home-sections)/CTASection';
 import SecuritySection from './(home-sections)/SecuritySection';
+import ScrollTopButton from '@/components/ScrollTopButton';
 
 export default function Home() {
     return (
@@ -73,6 +74,7 @@ export default function Home() {
                 }}
             />
             <div className='h-[500px] w-full'></div>
+            <ScrollTopButton />
         </div>
     );
 }
