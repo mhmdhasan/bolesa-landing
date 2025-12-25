@@ -108,11 +108,11 @@ export default function FAQsSection() {
                                     className='rounded-xl shadow-[0_3px_8px_rgba(0,0,0,0.09)]'
                                     value={`item-${index + 1}`}
                                 >
-                                    <AccordionTrigger>
+                                    <AccordionTrigger className='text-start text-[15px] lg:text-base'>
                                         {index + 1}. {faq.question}
                                     </AccordionTrigger>
                                     <AccordionContent className='w-full flex flex-col gap-4 text-balance text-start pt-4 border-t border-dotted'>
-                                        <p className='text-neutral-600 text-wrap text-[16px] w-full px-2'>
+                                        <p className='text-neutral-600 text-wrap w-full px-2  text-[15px] lg:text-base'>
                                             {faq.answer}
                                         </p>
                                     </AccordionContent>

@@ -25,8 +25,14 @@ const fadeInUp = (delay = 0, duration = 0.7, y = 30) => ({
 });
 
 function CursorCircle() {
-    const circleRef = useRef<HTMLDivElement>(null);
+    const mainCircleRef = useRef<HTMLDivElement>(null);
+    const midCircleRef = useRef<HTMLDivElement>(null);
+    const outerCircleRef = useRef<HTMLDivElement>(null);
     const [coords, setCoords] = useState({ x: -100, y: -100 });
+
+    // For a simple trailing effect, let's introduce a separate slow coords for mid and outer circles
+    const [midCoords, setMidCoords] = useState({ x: -100, y: -100 });
+    const [outerCoords, setOuterCoords] = useState({ x: -100, y: -100 });
 
     useEffect(() => {
         const handleMove = (e: MouseEvent) => {
@@ -36,30 +42,110 @@ function CursorCircle() {
         return () => window.removeEventListener('mousemove', handleMove);
     }, []);
 
-    // Animate with CSS transform for best performance
+    // Smooth trailing update for mid and outer circles
     useEffect(() => {
-        if (circleRef.current) {
-            circleRef.current.style.transform = `translate3d(${coords.x - 9}px, ${coords.y - 9}px, 0)`;
+        let midAnimId: number, outerAnimId: number;
+
+        function animateMid() {
+            setMidCoords((prev) => {
+                const lerp = 0.23; // trailing amount (larger is faster catchup)
+                return {
+                    x: prev.x + (coords.x - prev.x) * lerp,
+                    y: prev.y + (coords.y - prev.y) * lerp,
+                };
+            });
+            midAnimId = requestAnimationFrame(animateMid);
+        }
+        function animateOuter() {
+            setOuterCoords((prev) => {
+                const lerp = 0.13;
+                return {
+                    x: prev.x + (coords.x - prev.x) * lerp,
+                    y: prev.y + (coords.y - prev.y) * lerp,
+                };
+            });
+            outerAnimId = requestAnimationFrame(animateOuter);
+        }
+        midAnimId = requestAnimationFrame(animateMid);
+        outerAnimId = requestAnimationFrame(animateOuter);
+        return () => {
+            cancelAnimationFrame(midAnimId);
+            cancelAnimationFrame(outerAnimId);
+        };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [coords.x, coords.y]);
+
+    // Main circle follows cursor exactly
+    useEffect(() => {
+        if (mainCircleRef.current) {
+            mainCircleRef.current.style.transform = `translate3d(${coords.x - 9}px, ${coords.y - 9}px, 0)`;
         }
     }, [coords]);
 
-    // The circle is pointer-events-none so it never blocks anything.
+    // Mid circle follows with lag
+    useEffect(() => {
+        if (midCircleRef.current) {
+            midCircleRef.current.style.transform = `translate3d(${midCoords.x - 8}px, ${midCoords.y - 10}px, 0)`;
+        }
+    }, [midCoords]);
+
+    // Outer circle follows with more lag
+    useEffect(() => {
+        if (outerCircleRef.current) {
+            outerCircleRef.current.style.transform = `translate3d(${outerCoords.x - 7}px, ${outerCoords.y - 11}px, 0)`;
+        }
+    }, [outerCoords]);
+
+    // All the circles are pointer-events-none so they never block anything.
     return (
-        <div
-            ref={circleRef}
-            className='hidden lg:block fixed z-99 pointer-events-none mix-blend-difference'
-            style={{
-                left: 0,
-                top: 0,
-                width: 12,
-                height: 12,
-                borderRadius: '50%',
-                background: '#fff',
-                transition: 'all 0.1s',
-                // transform handled by useEffect for performance
-                willChange: 'transform',
-            }}
-        />
+        <>
+            {/* Main (center) circle */}
+            <div
+                ref={mainCircleRef}
+                className='hidden lg:block fixed z-99 pointer-events-none mix-blend-difference'
+                style={{
+                    left: 0,
+                    top: 0,
+                    width: 18,
+                    height: 18,
+                    borderRadius: '50%',
+                    background: '#fff',
+                    transition: 'all 0.12s',
+                    willChange: 'transform',
+                }}
+            />
+            {/* Middle circle */}
+            <div
+                ref={midCircleRef}
+                className='hidden lg:block fixed z-99 pointer-events-none mix-blend-difference'
+                style={{
+                    left: 0,
+                    top: 0,
+                    width: 18,
+                    height: 18,
+                    borderRadius: '50%',
+                    opacity: 1,
+                    background: '#333',
+                    transition: 'all 0.12s',
+                    willChange: 'transform',
+                }}
+            />
+            {/* Outer fainter, larger circle */}
+            <div
+                ref={outerCircleRef}
+                className='hidden bg-[#222] lg:block fixed z-99 pointer-events-none mix-blend-difference'
+                style={{
+                    left: 0,
+                    top: 0,
+                    width: 18,
+                    height: 18,
+                    borderRadius: '50%',
+                    opacity: 1,
+                    transition: 'all 0.12s',
+                    willChange: 'transform',
+                }}
+            />
+        </>
     );
 }
 
