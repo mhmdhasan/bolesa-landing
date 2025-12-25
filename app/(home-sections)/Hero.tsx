@@ -47,7 +47,7 @@ function CursorCircle() {
     return (
         <div
             ref={circleRef}
-            className='fixed z-99 pointer-events-none mix-blend-difference'
+            className='hidden lg:block fixed z-99 pointer-events-none mix-blend-difference'
             style={{
                 left: 0,
                 top: 0,
@@ -100,8 +100,8 @@ export default function Hero() {
                 height={800}
                 width={2000}
             />
-            <div className='max-w-[1110px] mt-10 w-full mx-auto relative px-6 lg:px-0'>
-                <div className='framer-1hdn25l absolute inset-0 top-20 opacity-20'>
+            <div className='max-w-[1110px] mt-10 w-full mx-auto relative px-4 lg:px-0'>
+                <div className='framer-1hdn25l absolute inset-0 top-20 opacity-30'>
                     <div className='framer-upm3bh'></div>
                     <div className='framer-1v27kjt'></div>
                     <div className='framer-tc2tc4'></div>
@@ -142,7 +142,7 @@ export default function Hero() {
                             </TextAnimate>{' '}
                             <Highlighter
                                 action='underline'
-                                strokeWidth={4.5}
+                                strokeWidth={3.5}
                                 padding={isMobile ? 4 : 10}
                                 iterations={2}
                                 color='#f28247'
@@ -167,7 +167,7 @@ export default function Hero() {
                     >
                         <motion.div variants={fadeInUp(0.35, 0.6, 10)}>
                             <div className='rounded-xl flex justify-center flex-col items-center cursor-default bg-background/60 backdrop-blur-sm px-4 py-5 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <div className='flex items-center justify-center text-3xl font-bold font-ibm-plex-sans-arabic'>
+                                <div className='flex items-center justify-center text-3xl font-bold font-ibm-plex-sans-arabic bg-linear-to-r from-brand via-orange-600/70 to-orange-700/80 bg-clip-text text-transparent'>
                                     2,000,000
                                 </div>
                                 <p>بوليصة</p>
@@ -175,13 +175,15 @@ export default function Hero() {
                         </motion.div>
                         <motion.div variants={fadeInUp(0.41, 0.6, 10)}>
                             <div className='rounded-xl bg-background/60 backdrop-blur-sm flex justify-center items-center flex-col px-4 py-5 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <span className='text-3xl font-bold font-ibm-plex-sans-arabic'>+4000</span>
+                                <span className='text-3xl font-bold font-ibm-plex-sans-arabic bg-linear-to-r from-brand via-orange-600/70 to-orange-700/80 bg-clip-text text-transparent'>
+                                    +4000
+                                </span>
                                 <p>عميل</p>
                             </div>
                         </motion.div>
                         <motion.div variants={fadeInUp(0.47, 0.6, 10)}>
                             <div className='rounded-xl bg-background/60 backdrop-blur-sm flex justify-center items-center flex-col px-4 py-5 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <div className='flex items-center text-3xl font-bold font-ibm-plex-sans-arabic'>
+                                <div className='flex items-center text-3xl font-bold font-ibm-plex-sans-arabic bg-linear-to-r from-brand via-orange-600/70 to-orange-700/80 bg-clip-text text-transparent'>
                                     99.7%
                                 </div>
                                 <p>نسبة نجاح</p>
@@ -197,44 +199,52 @@ export default function Hero() {
                         </motion.div>
                         <motion.div
                             variants={fadeInUp(0.58)}
-                            className='flex items-center justify-center gap-2 flex-wrap'
+                            className='flex items-center justify-center flex-col lg:flex-row gap-2 flex-wrap'
                         >
-                            <Button asChild variant='primary' className='px-6!'>
+                            <Button asChild variant='primary' className='px-6! w-full lg:w-auto'>
                                 <Link target='_blank' href={'https://app.bolesa.net'}>
                                     ابدأ الشحن الآن
                                     <FaShippingFast className='size-6 shrink-0 rotate-y-180' />
                                 </Link>
                             </Button>
-                            <Button asChild variant='store' className='py-2!'>
-                                <Link
-                                    target='_blank'
-                                    href={
-                                        'https://apps.apple.com/sa/app/bolesa-%D8%A8%D9%88%D9%84%D9%8A%D8%B5%D8%A9/id6670608761'
-                                    }
-                                >
-                                    <div className='inline-flex gap-2'>
-                                        <div className='inline-flex text-end gap-0 flex-col'>
-                                            <p className='text-[11px] font-regular leading-none uppercase'>Get It On</p>
-                                            <p className='text-[14px] font-bold leading-none'>App Store</p>
+                            <div className='flex items-center justify-center gap-2'>
+                                <Button asChild variant='store' className='py-2! grow lg:w-auto'>
+                                    <Link
+                                        target='_blank'
+                                        href={
+                                            'https://apps.apple.com/sa/app/bolesa-%D8%A8%D9%88%D9%84%D9%8A%D8%B5%D8%A9/id6670608761'
+                                        }
+                                    >
+                                        <div className='inline-flex gap-2'>
+                                            <div className='inline-flex text-end gap-0 flex-col'>
+                                                <p className='text-[11px] font-regular leading-none uppercase'>
+                                                    Get It On
+                                                </p>
+                                                <p className='text-[14px] font-bold leading-none'>App Store</p>
+                                            </div>
+                                            <FaAppStore className='size-6 shrink-0' />
                                         </div>
-                                        <FaAppStore className='size-6 shrink-0' />
-                                    </div>
-                                </Link>
-                            </Button>
-                            <Button asChild variant='store' className='py-2!'>
-                                <Link
-                                    target='_blank'
-                                    href={'https://play.google.com/store/apps/details?id=com.storagestation.bolesa.co'}
-                                >
-                                    <div className='inline-flex gap-2'>
-                                        <div className='inline-flex text-end gap-0 flex-col'>
-                                            <p className='text-[11px] font-regular leading-none uppercase'>Get It On</p>
-                                            <p className='text-[14px] font-bold leading-none'>Google Play</p>
+                                    </Link>
+                                </Button>
+                                <Button asChild variant='store' className='py-2! grow lg:w-auto'>
+                                    <Link
+                                        target='_blank'
+                                        href={
+                                            'https://play.google.com/store/apps/details?id=com.storagestation.bolesa.co'
+                                        }
+                                    >
+                                        <div className='inline-flex gap-2'>
+                                            <div className='inline-flex text-end gap-0 flex-col'>
+                                                <p className='text-[11px] font-regular leading-none uppercase'>
+                                                    Get It On
+                                                </p>
+                                                <p className='text-[14px] font-bold leading-none'>Google Play</p>
+                                            </div>
+                                            <FaGooglePlay className='size-6 shrink-0' />
                                         </div>
-                                        <FaGooglePlay className='size-6 shrink-0' />
-                                    </div>
-                                </Link>
-                            </Button>
+                                    </Link>
+                                </Button>
+                            </div>
                         </motion.div>
                     </div>
                 </motion.div>
