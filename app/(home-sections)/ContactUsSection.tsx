@@ -122,7 +122,6 @@ export default function ContactUsSection() {
                     </motion.div>
                 </div>
             </section>
-            <HLine />
         </div>
     );
 }

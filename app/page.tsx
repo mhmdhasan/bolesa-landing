@@ -13,6 +13,7 @@ import CTASection from './(home-sections)/CTASection';
 import SecuritySection from './(home-sections)/SecuritySection';
 import ScrollTopButton from '@/components/ScrollTopButton';
 import ContactUsSection from './(home-sections)/ContactUsSection';
+import Footer from './(home-sections)/Footer';
 
 export default function Home() {
     return (
@@ -76,6 +77,8 @@ export default function Home() {
                 }}
             />
             <ScrollTopButton />
+            <Footer />
+            <div className='py-3'></div>
         </div>
     );
 }
