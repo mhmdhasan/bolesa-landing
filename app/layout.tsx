@@ -113,7 +113,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang='ar' dir='rtl'>
+        <html lang='ar' dir='rtl' suppressHydrationWarning={true}>
             <body
                 className={`${geistSans.variable} overflow-x-hidden ${ibmPlexSansArabic.variable} ${cairo.variable} ${geistMono.variable} font-cairo antialiased`}
             >

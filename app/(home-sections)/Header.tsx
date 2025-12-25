@@ -4,12 +4,19 @@ import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/ui/shadcn-io/navbar-02';
 import Link from 'next/link';
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { FaBars } from 'react-icons/fa6';
 
 const navLinks = [
     { id: 'contact-us', href: '#contact-us', label: 'تواصل معنا' },
     { id: 'faq', href: '#faq', label: 'الأسئلة الشائعة' },
-    { id: 'tracking', href: '#tracking', label: 'تتبع الشحنات' },
     { id: 'carriers', href: '#carriers', label: 'الناقلون' },
+    { id: 'security', href: '#security', label: 'الأمان' },
     { id: 'features', href: '#features', label: 'المميزات' },
     { id: 'howitworks', href: '#howitworks', label: 'آلية العمل' },
     { id: 'hero', href: '#hero', label: 'الرئيسية' },
@@ -99,6 +106,40 @@ export default function Header() {
                                 </span>
                             </Link>
                         </Button>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button
+                                    variant='outline'
+                                    className='inline-block xl:hidden border-muted! cursor-pointer'
+                                >
+                                    <FaBars />
+                                </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent className='min-w-[calc(100vw-3rem)] ms-6 mt-3 z-9999 flex flex-col-reverse'>
+                                <DropdownMenuItem asChild>
+                                    <Button
+                                        variant='outline'
+                                        asChild
+                                        className='text-sm font-medium hover:bg-accent hover:text-accent-foreground'
+                                    >
+                                        <Link href='tel:1234567890' className='inline-flex items-center py-2.5! gap-3!'>
+                                            <span
+                                                className='font-bold font-ibm-plex-sans-arabic leading-none! text-[17px]'
+                                                style={{ direction: 'ltr' }}
+                                            >
+                                                +966552993266
+                                            </span>
+                                            <span className='text-[12px] leading-none!'>اتصل بنا</span>
+                                        </Link>
+                                    </Button>
+                                </DropdownMenuItem>
+                                {navLinks?.map((link) => (
+                                    <DropdownMenuItem className='text-start justify-end' asChild key={link?.href}>
+                                        <Link href={link.href}>{link.label}</Link>
+                                    </DropdownMenuItem>
+                                ))}
+                            </DropdownMenuContent>
+                        </DropdownMenu>
                         <Button variant='store' className='text-sm font-medium px-4 h-9 rounded-md shadow-sm' asChild>
                             <Link href='https://app.bolesa.net' target='_blank'>
                                 تسجيل الدخول

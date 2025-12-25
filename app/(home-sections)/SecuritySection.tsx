@@ -72,7 +72,7 @@ export default function SecuritySection() {
             <HLine />
             <div className='py-3'></div>
             <HLine />
-            <section className='py-[100px] w-full overflow-hidden relative' id='who-is-it-for'>
+            <section className='py-[100px] w-full overflow-hidden relative' id='security'>
                 <div className='max-w-[1200px] px-6 lg:px-0 w-full mx-auto relative z-20 text-center'>
                     <SectionBadge title='الأمان والموثوقية' color='#333' />
                     <motion.h2
