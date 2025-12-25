@@ -4,13 +4,9 @@ import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/ui/shadcn-io/navbar-02';
 import Link from 'next/link';
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { FaBars } from 'react-icons/fa6';
+import { HiOutlineBars3BottomLeft } from 'react-icons/hi2';
+
+import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer';
 
 const navLinks = [
     { id: 'contact-us', href: '#contact-us', label: 'تواصل معنا' },
@@ -26,6 +22,7 @@ export default function Header() {
     const [showNav, setShowNav] = useState(true);
     const lastScrollY = useRef(0);
     const ticking = useRef(false);
+    const [openDrawer, setOpenDrawer] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -63,7 +60,7 @@ export default function Header() {
     // Add an "active" CSS class on the <li> itself for better targeting
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-9999 py-4 px-5 transition-transform duration-300 ${
+            className={`fixed top-0 left-0 right-0 z-9998 py-4 px-5 transition-transform duration-300 ${
                 showNav ? 'translate-y-0' : '-translate-y-full'
             }`}
         >
@@ -106,40 +103,47 @@ export default function Header() {
                                 </span>
                             </Link>
                         </Button>
-                        <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                                <Button
-                                    variant='outline'
-                                    className='inline-block xl:hidden border-muted! cursor-pointer'
-                                >
-                                    <FaBars />
+                        <Drawer open={openDrawer} onOpenChange={setOpenDrawer}>
+                            <DrawerTrigger asChild>
+                                <Button variant='ghost' className='inline-block xl:hidden border-muted! cursor-pointer'>
+                                    <HiOutlineBars3BottomLeft className='size-6' />
                                 </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent className='min-w-[calc(100vw-3rem)] ms-6 mt-3 z-9999 flex flex-col-reverse'>
-                                <DropdownMenuItem asChild>
-                                    <Button
-                                        variant='outline'
-                                        asChild
-                                        className='text-sm font-medium hover:bg-accent hover:text-accent-foreground'
-                                    >
-                                        <Link href='tel:1234567890' className='inline-flex items-center py-2.5! gap-3!'>
-                                            <span
-                                                className='font-bold font-ibm-plex-sans-arabic leading-none! text-[17px]'
-                                                style={{ direction: 'ltr' }}
+                            </DrawerTrigger>
+                            <DrawerContent className='font-ibm-plex-sans-arabic px-8 pb-8 z-9999 flex'>
+                                <div className='flex flex-col-reverse pt-8'>
+                                    <div className='flex flex-col w-fit mx-auto'>
+                                        <Button
+                                            variant='outline'
+                                            asChild
+                                            className='text-sm font-medium hover:bg-accent hover:text-accent-foreground'
+                                        >
+                                            <Link
+                                                href='tel:1234567890'
+                                                className='inline-flex items-center py-2.5! gap-3!'
                                             >
-                                                +966552993266
-                                            </span>
-                                            <span className='text-[12px] leading-none!'>اتصل بنا</span>
-                                        </Link>
-                                    </Button>
-                                </DropdownMenuItem>
-                                {navLinks?.map((link) => (
-                                    <DropdownMenuItem className='text-start justify-end' asChild key={link?.href}>
-                                        <Link href={link.href}>{link.label}</Link>
-                                    </DropdownMenuItem>
-                                ))}
-                            </DropdownMenuContent>
-                        </DropdownMenu>
+                                                <span
+                                                    className='font-bold font-ibm-plex-sans-arabic leading-none! text-[17px]'
+                                                    style={{ direction: 'ltr' }}
+                                                >
+                                                    +966552993266
+                                                </span>
+                                                <span className='text-[12px] leading-none!'>اتصل بنا</span>
+                                            </Link>
+                                        </Button>
+                                    </div>
+                                    {navLinks?.map((link) => (
+                                        <div
+                                            className='text-center justify-center text-lg font-bold my-3'
+                                            key={link?.href}
+                                        >
+                                            <Link onClick={() => setOpenDrawer(false)} href={link.href}>
+                                                {link.label}
+                                            </Link>
+                                        </div>
+                                    ))}
+                                </div>
+                            </DrawerContent>
+                        </Drawer>
                         <Button variant='store' className='text-sm font-medium px-4 h-9 rounded-md shadow-sm' asChild>
                             <Link href='https://app.bolesa.net' target='_blank'>
                                 تسجيل الدخول

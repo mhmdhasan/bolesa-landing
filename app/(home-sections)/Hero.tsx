@@ -253,7 +253,7 @@ export default function Hero() {
                     >
                         <motion.div variants={fadeInUp(0.35, 0.6, 10)}>
                             <div className='rounded-xl flex justify-center flex-col items-center cursor-default bg-background/60 backdrop-blur-sm px-4 py-5 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <div className='flex items-center justify-center text-3xl font-bold font-ibm-plex-sans-arabic bg-linear-to-r from-brand via-orange-600/70 to-orange-700/80 bg-clip-text text-transparent'>
+                                <div className='flex items-center justify-center text-3xl font-bold font-ibm-plex-sans-arabic bg-linear-to-r from-black via-neutral-700 to-neutral-500  bg-clip-text text-transparent'>
                                     2,000,000
                                 </div>
                                 <p>بوليصة</p>
@@ -261,7 +261,7 @@ export default function Hero() {
                         </motion.div>
                         <motion.div variants={fadeInUp(0.41, 0.6, 10)}>
                             <div className='rounded-xl bg-background/60 backdrop-blur-sm flex justify-center items-center flex-col px-4 py-5 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <span className='text-3xl font-bold font-ibm-plex-sans-arabic bg-linear-to-r from-brand via-orange-600/70 to-orange-700/80 bg-clip-text text-transparent'>
+                                <span className='text-3xl font-bold font-ibm-plex-sans-arabic bg-linear-to-r from-black via-neutral-700 to-neutral-500 bg-clip-text text-transparent'>
                                     +4000
                                 </span>
                                 <p>عميل</p>
@@ -269,7 +269,7 @@ export default function Hero() {
                         </motion.div>
                         <motion.div variants={fadeInUp(0.47, 0.6, 10)}>
                             <div className='rounded-xl bg-background/60 backdrop-blur-sm flex justify-center items-center flex-col px-4 py-5 shadow-[0_1px_5px_rgba(0,0,0,0.07)]'>
-                                <div className='flex items-center text-3xl font-bold font-ibm-plex-sans-arabic bg-linear-to-r from-brand via-orange-600/70 to-orange-700/80 bg-clip-text text-transparent'>
+                                <div className='flex items-center text-3xl font-bold font-ibm-plex-sans-arabic bg-linear-to-r from-black via-neutral-700 to-neutral-500  bg-clip-text text-transparent'>
                                     99.7%
                                 </div>
                                 <p>نسبة نجاح</p>
