@@ -1,14 +1,28 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Logo } from '@/components/ui/shadcn-io/navbar-02';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { FaAppStore, FaCircle, FaGooglePlay } from 'react-icons/fa6';
 import { Button } from '@/components/ui/button';
+import { motion } from 'motion/react';
+
+const fadeInUp = (delay = 0, duration = 0.7, y = 30, blur = 8) => ({
+    initial: { opacity: 0, y, filter: `blur(${blur}px)` },
+    animate: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration, delay } },
+});
 
 export default function Footer() {
     return (
-        <footer className='w-full px-5 relative z-99'>
-            <div className='bg-neutral-100 pt-[50px] pb-[30px] mx-auto px-5 lg:px-0 flex flex-col gap-6 rounded-3xl'>
+        <motion.footer
+            initial='initial'
+            whileInView='animate'
+            viewport={{ once: true, amount: 0.22 }}
+            variants={fadeInUp(0.58)}
+            className='w-full px-5 relative z-99'
+        >
+            <div className='bg-neutral-100 border-t-5 ring-6 border-t-neutral-200/30 ring-neutral-200/30 pt-[50px] pb-[30px] mx-auto px-5 lg:px-0 flex flex-col gap-6 rounded-3xl'>
                 <div className='grid max-w-[1200px] mx-auto grid-col-1 lg:grid-cols-3 gap-6'>
                     <div className='flex flex-col gap-3'>
                         <Link href='/'>
@@ -132,6 +146,6 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-        </footer>
+        </motion.footer>
     );
 }
