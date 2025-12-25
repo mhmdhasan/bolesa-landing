@@ -12,6 +12,7 @@ import FAQsSection from './(home-sections)/FAQsSection';
 import CTASection from './(home-sections)/CTASection';
 import SecuritySection from './(home-sections)/SecuritySection';
 import ScrollTopButton from '@/components/ScrollTopButton';
+import ContactUsSection from './(home-sections)/ContactUsSection';
 
 export default function Home() {
     return (
@@ -36,6 +37,7 @@ export default function Home() {
             <PricingSection />
             <FAQsSection />
             <CTASection />
+            <ContactUsSection />
             <div
                 className="
                     pointer-events-none 
@@ -73,7 +75,6 @@ export default function Home() {
                     pointerEvents: 'none',
                 }}
             />
-            <div className='h-[500px] w-full'></div>
             <ScrollTopButton />
         </div>
     );
