@@ -277,7 +277,7 @@ export default function Hero() {
                         </motion.div>
                     </motion.div>
 
-                    <div className='w-full flex flex-col items-center gap-2'>
+                    <div className='w-full flex flex-col px-5 items-center gap-2'>
                         <motion.div variants={fadeInUp(0.53)} className='text-neutral-6700 mb-3'>
                             <TextAnimate className='inline-block' animation='blurInUp' by='word' duration={1} once>
                                 حمّل تطبيق بوليصة أو ابدأ الشحن من تطبيق الويب بسهولة وسرعة
@@ -285,16 +285,16 @@ export default function Hero() {
                         </motion.div>
                         <motion.div
                             variants={fadeInUp(0.58)}
-                            className='flex items-center justify-center flex-col lg:flex-row gap-2 flex-wrap'
+                            className='flex items-center w-full justify-center flex-col lg:flex-row gap-2 flex-wrap'
                         >
-                            <Button asChild variant='primary' className='px-6! w-full lg:w-auto'>
+                            <Button asChild variant='primary' className='px-3 lg:px-6! w-full lg:w-auto'>
                                 <Link target='_blank' href={'https://app.bolesa.net'}>
                                     ابدأ الشحن الآن
                                     <FaShippingFast className='size-6 shrink-0 rotate-y-180' />
                                 </Link>
                             </Button>
-                            <div className='flex items-center justify-center gap-2'>
-                                <Button asChild variant='store' className='py-2! grow lg:w-auto'>
+                            <div className='flex items-center w-full justify-center gap-2'>
+                                <Button asChild variant='store' className='py-2! px-3! lg:px-6! grow lg:w-auto'>
                                     <Link
                                         target='_blank'
                                         href={
@@ -312,7 +312,7 @@ export default function Hero() {
                                         </div>
                                     </Link>
                                 </Button>
-                                <Button asChild variant='store' className='py-2! grow lg:w-auto'>
+                                <Button asChild variant='store' className='py-2! px-3! lg:px-6 grow lg:w-auto'>
                                     <Link
                                         target='_blank'
                                         href={
