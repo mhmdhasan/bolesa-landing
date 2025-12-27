@@ -167,7 +167,7 @@ const carrierImages = [
 
 export default function LogoSlider() {
     return (
-        <section>
+        <section className='w-full overflow-hidden'>
             <div className='w-full flex flex-col items-center justify-center gap-3 z-10 relative'>
                 <HLine />
 

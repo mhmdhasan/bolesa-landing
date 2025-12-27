@@ -285,7 +285,7 @@ export default function Hero() {
                         </motion.div>
                         <motion.div
                             variants={fadeInUp(0.58)}
-                            className='flex items-center w-full justify-center flex-col lg:flex-row gap-2 flex-wrap'
+                            className='flex items-center w-full lg:w-fit mx-auto justify-center flex-col lg:flex-row gap-2 flex-wrap lg:flex-nowrap'
                         >
                             <Button asChild variant='primary' className='px-3 lg:px-6! w-full lg:w-auto'>
                                 <Link target='_blank' href={'https://app.bolesa.net'}>
